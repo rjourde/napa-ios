@@ -1,0 +1,500 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		14AB329D19310049002E9D30 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14AB329C19310049002E9D30 /* Foundation.framework */; };
+		14AB329F19310049002E9D30 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14AB329E19310049002E9D30 /* CoreGraphics.framework */; };
+		14AB32A119310049002E9D30 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14AB32A019310049002E9D30 /* UIKit.framework */; };
+		14AB32A319310049002E9D30 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14AB32A219310049002E9D30 /* CoreData.framework */; };
+		14AB32A919310049002E9D30 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 14AB32A719310049002E9D30 /* InfoPlist.strings */; };
+		14AB32AB19310049002E9D30 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AB32AA19310049002E9D30 /* main.m */; };
+		14AB32AF19310049002E9D30 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AB32AE19310049002E9D30 /* AppDelegate.m */; };
+		14AB32B219310049002E9D30 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14AB32B019310049002E9D30 /* Main.storyboard */; };
+		14AB32B519310049002E9D30 /* napa.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 14AB32B319310049002E9D30 /* napa.xcdatamodeld */; };
+		14AB32B819310049002E9D30 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AB32B719310049002E9D30 /* MasterViewController.m */; };
+		14AB32BB19310049002E9D30 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AB32BA19310049002E9D30 /* DetailViewController.m */; };
+		14AB32BD19310049002E9D30 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14AB32BC19310049002E9D30 /* Images.xcassets */; };
+		14AB32C41931004A002E9D30 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14AB32C31931004A002E9D30 /* XCTest.framework */; };
+		14AB32C51931004A002E9D30 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14AB329C19310049002E9D30 /* Foundation.framework */; };
+		14AB32C61931004A002E9D30 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14AB32A019310049002E9D30 /* UIKit.framework */; };
+		14AB32C71931004A002E9D30 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14AB32A219310049002E9D30 /* CoreData.framework */; };
+		14AB32CF1931004A002E9D30 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 14AB32CD1931004A002E9D30 /* InfoPlist.strings */; };
+		14AB32D11931004A002E9D30 /* napaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AB32D01931004A002E9D30 /* napaTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		14AB32C81931004A002E9D30 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 14AB329119310049002E9D30 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 14AB329819310049002E9D30;
+			remoteInfo = napa;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		14AB329919310049002E9D30 /* napa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = napa.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		14AB329C19310049002E9D30 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		14AB329E19310049002E9D30 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		14AB32A019310049002E9D30 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		14AB32A219310049002E9D30 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		14AB32A619310049002E9D30 /* napa-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "napa-Info.plist"; sourceTree = "<group>"; };
+		14AB32A819310049002E9D30 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		14AB32AA19310049002E9D30 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		14AB32AC19310049002E9D30 /* napa-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "napa-Prefix.pch"; sourceTree = "<group>"; };
+		14AB32AD19310049002E9D30 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		14AB32AE19310049002E9D30 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		14AB32B119310049002E9D30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		14AB32B419310049002E9D30 /* napa.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = napa.xcdatamodel; sourceTree = "<group>"; };
+		14AB32B619310049002E9D30 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
+		14AB32B719310049002E9D30 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
+		14AB32B919310049002E9D30 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		14AB32BA19310049002E9D30 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		14AB32BC19310049002E9D30 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		14AB32C21931004A002E9D30 /* napaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = napaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		14AB32C31931004A002E9D30 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		14AB32CC1931004A002E9D30 /* napaTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "napaTests-Info.plist"; sourceTree = "<group>"; };
+		14AB32CE1931004A002E9D30 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		14AB32D01931004A002E9D30 /* napaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = napaTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		14AB329619310049002E9D30 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				14AB329F19310049002E9D30 /* CoreGraphics.framework in Frameworks */,
+				14AB32A319310049002E9D30 /* CoreData.framework in Frameworks */,
+				14AB32A119310049002E9D30 /* UIKit.framework in Frameworks */,
+				14AB329D19310049002E9D30 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		14AB32BF1931004A002E9D30 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				14AB32C41931004A002E9D30 /* XCTest.framework in Frameworks */,
+				14AB32C71931004A002E9D30 /* CoreData.framework in Frameworks */,
+				14AB32C61931004A002E9D30 /* UIKit.framework in Frameworks */,
+				14AB32C51931004A002E9D30 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		14AB329019310049002E9D30 = {
+			isa = PBXGroup;
+			children = (
+				14AB32A419310049002E9D30 /* napa */,
+				14AB32CA1931004A002E9D30 /* napaTests */,
+				14AB329B19310049002E9D30 /* Frameworks */,
+				14AB329A19310049002E9D30 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		14AB329A19310049002E9D30 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				14AB329919310049002E9D30 /* napa.app */,
+				14AB32C21931004A002E9D30 /* napaTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		14AB329B19310049002E9D30 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				14AB329C19310049002E9D30 /* Foundation.framework */,
+				14AB329E19310049002E9D30 /* CoreGraphics.framework */,
+				14AB32A019310049002E9D30 /* UIKit.framework */,
+				14AB32A219310049002E9D30 /* CoreData.framework */,
+				14AB32C31931004A002E9D30 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		14AB32A419310049002E9D30 /* napa */ = {
+			isa = PBXGroup;
+			children = (
+				14AB32AD19310049002E9D30 /* AppDelegate.h */,
+				14AB32AE19310049002E9D30 /* AppDelegate.m */,
+				14AB32B019310049002E9D30 /* Main.storyboard */,
+				14AB32B619310049002E9D30 /* MasterViewController.h */,
+				14AB32B719310049002E9D30 /* MasterViewController.m */,
+				14AB32B919310049002E9D30 /* DetailViewController.h */,
+				14AB32BA19310049002E9D30 /* DetailViewController.m */,
+				14AB32BC19310049002E9D30 /* Images.xcassets */,
+				14AB32B319310049002E9D30 /* napa.xcdatamodeld */,
+				14AB32A519310049002E9D30 /* Supporting Files */,
+			);
+			path = napa;
+			sourceTree = "<group>";
+		};
+		14AB32A519310049002E9D30 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				14AB32A619310049002E9D30 /* napa-Info.plist */,
+				14AB32A719310049002E9D30 /* InfoPlist.strings */,
+				14AB32AA19310049002E9D30 /* main.m */,
+				14AB32AC19310049002E9D30 /* napa-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		14AB32CA1931004A002E9D30 /* napaTests */ = {
+			isa = PBXGroup;
+			children = (
+				14AB32D01931004A002E9D30 /* napaTests.m */,
+				14AB32CB1931004A002E9D30 /* Supporting Files */,
+			);
+			path = napaTests;
+			sourceTree = "<group>";
+		};
+		14AB32CB1931004A002E9D30 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				14AB32CC1931004A002E9D30 /* napaTests-Info.plist */,
+				14AB32CD1931004A002E9D30 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		14AB329819310049002E9D30 /* napa */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 14AB32D41931004A002E9D30 /* Build configuration list for PBXNativeTarget "napa" */;
+			buildPhases = (
+				14AB329519310049002E9D30 /* Sources */,
+				14AB329619310049002E9D30 /* Frameworks */,
+				14AB329719310049002E9D30 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = napa;
+			productName = napa;
+			productReference = 14AB329919310049002E9D30 /* napa.app */;
+			productType = "com.apple.product-type.application";
+		};
+		14AB32C11931004A002E9D30 /* napaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 14AB32D71931004A002E9D30 /* Build configuration list for PBXNativeTarget "napaTests" */;
+			buildPhases = (
+				14AB32BE1931004A002E9D30 /* Sources */,
+				14AB32BF1931004A002E9D30 /* Frameworks */,
+				14AB32C01931004A002E9D30 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				14AB32C91931004A002E9D30 /* PBXTargetDependency */,
+			);
+			name = napaTests;
+			productName = napaTests;
+			productReference = 14AB32C21931004A002E9D30 /* napaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		14AB329119310049002E9D30 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Remy JOURDE";
+				TargetAttributes = {
+					14AB32C11931004A002E9D30 = {
+						TestTargetID = 14AB329819310049002E9D30;
+					};
+				};
+			};
+			buildConfigurationList = 14AB329419310049002E9D30 /* Build configuration list for PBXProject "napa" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 14AB329019310049002E9D30;
+			productRefGroup = 14AB329A19310049002E9D30 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				14AB329819310049002E9D30 /* napa */,
+				14AB32C11931004A002E9D30 /* napaTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		14AB329719310049002E9D30 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				14AB32BD19310049002E9D30 /* Images.xcassets in Resources */,
+				14AB32A919310049002E9D30 /* InfoPlist.strings in Resources */,
+				14AB32B219310049002E9D30 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		14AB32C01931004A002E9D30 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				14AB32CF1931004A002E9D30 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		14AB329519310049002E9D30 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				14AB32BB19310049002E9D30 /* DetailViewController.m in Sources */,
+				14AB32B819310049002E9D30 /* MasterViewController.m in Sources */,
+				14AB32B519310049002E9D30 /* napa.xcdatamodeld in Sources */,
+				14AB32AF19310049002E9D30 /* AppDelegate.m in Sources */,
+				14AB32AB19310049002E9D30 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		14AB32BE1931004A002E9D30 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				14AB32D11931004A002E9D30 /* napaTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		14AB32C91931004A002E9D30 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 14AB329819310049002E9D30 /* napa */;
+			targetProxy = 14AB32C81931004A002E9D30 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		14AB32A719310049002E9D30 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				14AB32A819310049002E9D30 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		14AB32B019310049002E9D30 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				14AB32B119310049002E9D30 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		14AB32CD1931004A002E9D30 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				14AB32CE1931004A002E9D30 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		14AB32D21931004A002E9D30 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		14AB32D31931004A002E9D30 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		14AB32D51931004A002E9D30 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "napa/napa-Prefix.pch";
+				INFOPLIST_FILE = "napa/napa-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		14AB32D61931004A002E9D30 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "napa/napa-Prefix.pch";
+				INFOPLIST_FILE = "napa/napa-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		14AB32D81931004A002E9D30 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/napa.app/napa";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "napa/napa-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "napaTests/napaTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		14AB32D91931004A002E9D30 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/napa.app/napa";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "napa/napa-Prefix.pch";
+				INFOPLIST_FILE = "napaTests/napaTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		14AB329419310049002E9D30 /* Build configuration list for PBXProject "napa" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				14AB32D21931004A002E9D30 /* Debug */,
+				14AB32D31931004A002E9D30 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		14AB32D41931004A002E9D30 /* Build configuration list for PBXNativeTarget "napa" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				14AB32D51931004A002E9D30 /* Debug */,
+				14AB32D61931004A002E9D30 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		14AB32D71931004A002E9D30 /* Build configuration list for PBXNativeTarget "napaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				14AB32D81931004A002E9D30 /* Debug */,
+				14AB32D91931004A002E9D30 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		14AB32B319310049002E9D30 /* napa.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				14AB32B419310049002E9D30 /* napa.xcdatamodel */,
+			);
+			currentVersion = 14AB32B419310049002E9D30 /* napa.xcdatamodel */;
+			path = napa.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 14AB329119310049002E9D30 /* Project object */;
+}
