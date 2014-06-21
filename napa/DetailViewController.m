@@ -2,8 +2,8 @@
 //  DetailViewController.m
 //  napa
 //
-//  Created by Remy JOURDE on 24/05/2014.
-//  Copyright (c) 2014 Remy JOURDE. All rights reserved.
+//  Created by Remy JOURDE on 25/05/2014.
+//  Copyright (c) 2014 Remy Jourde. All rights reserved.
 //
 
 #import "DetailViewController.h"
@@ -31,7 +31,7 @@
     // Update the user interface for the detail item.
 
     if (self.detailItem) {
-        self.detailDescriptionLabel.text = [[self.detailItem valueForKey:@"timeStamp"] description];
+        self.NameLabel.text = [[self.detailItem valueForKey:@"name"] description];
     }
 }
 

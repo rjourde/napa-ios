@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "14AB329819310049002E9D30"
+               BlueprintIdentifier = "14FB15D01931F85000021E7F"
                BuildableName = "napa.app"
                BlueprintName = "napa"
                ReferencedContainer = "container:napa.xcodeproj">
@@ -32,7 +32,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "14AB32C11931004A002E9D30"
+               BlueprintIdentifier = "14FB15F91931F85000021E7F"
                BuildableName = "napaTests.xctest"
                BlueprintName = "napaTests"
                ReferencedContainer = "container:napa.xcodeproj">
@@ -42,7 +42,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "14AB329819310049002E9D30"
+            BlueprintIdentifier = "14FB15D01931F85000021E7F"
             BuildableName = "napa.app"
             BlueprintName = "napa"
             ReferencedContainer = "container:napa.xcodeproj">
@@ -61,7 +61,7 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "14AB329819310049002E9D30"
+            BlueprintIdentifier = "14FB15D01931F85000021E7F"
             BuildableName = "napa.app"
             BlueprintName = "napa"
             ReferencedContainer = "container:napa.xcodeproj">
@@ -79,7 +79,7 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "14AB329819310049002E9D30"
+            BlueprintIdentifier = "14FB15D01931F85000021E7F"
             BuildableName = "napa.app"
             BlueprintName = "napa"
             ReferencedContainer = "container:napa.xcodeproj">

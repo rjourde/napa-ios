@@ -7,175 +7,213 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		14AB329D19310049002E9D30 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14AB329C19310049002E9D30 /* Foundation.framework */; };
-		14AB329F19310049002E9D30 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14AB329E19310049002E9D30 /* CoreGraphics.framework */; };
-		14AB32A119310049002E9D30 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14AB32A019310049002E9D30 /* UIKit.framework */; };
-		14AB32A319310049002E9D30 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14AB32A219310049002E9D30 /* CoreData.framework */; };
-		14AB32A919310049002E9D30 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 14AB32A719310049002E9D30 /* InfoPlist.strings */; };
-		14AB32AB19310049002E9D30 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AB32AA19310049002E9D30 /* main.m */; };
-		14AB32AF19310049002E9D30 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AB32AE19310049002E9D30 /* AppDelegate.m */; };
-		14AB32B219310049002E9D30 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14AB32B019310049002E9D30 /* Main.storyboard */; };
-		14AB32B519310049002E9D30 /* napa.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 14AB32B319310049002E9D30 /* napa.xcdatamodeld */; };
-		14AB32B819310049002E9D30 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AB32B719310049002E9D30 /* MasterViewController.m */; };
-		14AB32BB19310049002E9D30 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AB32BA19310049002E9D30 /* DetailViewController.m */; };
-		14AB32BD19310049002E9D30 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14AB32BC19310049002E9D30 /* Images.xcassets */; };
-		14AB32C41931004A002E9D30 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14AB32C31931004A002E9D30 /* XCTest.framework */; };
-		14AB32C51931004A002E9D30 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14AB329C19310049002E9D30 /* Foundation.framework */; };
-		14AB32C61931004A002E9D30 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14AB32A019310049002E9D30 /* UIKit.framework */; };
-		14AB32C71931004A002E9D30 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14AB32A219310049002E9D30 /* CoreData.framework */; };
-		14AB32CF1931004A002E9D30 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 14AB32CD1931004A002E9D30 /* InfoPlist.strings */; };
-		14AB32D11931004A002E9D30 /* napaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AB32D01931004A002E9D30 /* napaTests.m */; };
+		1416A05B194DFFA900E0D89F /* TextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1416A05A194DFFA900E0D89F /* TextFieldCell.m */; };
+		14952A6D1955E1B300B8D34A /* DateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 14952A6C1955E1B300B8D34A /* DateCell.m */; };
+		14F74C151932465D00BA28C7 /* NewTripViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F74C141932465D00BA28C7 /* NewTripViewController.m */; };
+		14F74C1B19324E5600BA28C7 /* NSDate+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F74C1A19324E5600BA28C7 /* NSDate+Additions.m */; };
+		14F74C1E19324FC900BA28C7 /* Trip.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F74C1D19324FC900BA28C7 /* Trip.m */; };
+		14FB15D51931F85000021E7F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14FB15D41931F85000021E7F /* Foundation.framework */; };
+		14FB15D71931F85000021E7F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14FB15D61931F85000021E7F /* CoreGraphics.framework */; };
+		14FB15D91931F85000021E7F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14FB15D81931F85000021E7F /* UIKit.framework */; };
+		14FB15DB1931F85000021E7F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14FB15DA1931F85000021E7F /* CoreData.framework */; };
+		14FB15E11931F85000021E7F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 14FB15DF1931F85000021E7F /* InfoPlist.strings */; };
+		14FB15E31931F85000021E7F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FB15E21931F85000021E7F /* main.m */; };
+		14FB15E71931F85000021E7F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FB15E61931F85000021E7F /* AppDelegate.m */; };
+		14FB15EA1931F85000021E7F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14FB15E81931F85000021E7F /* Main.storyboard */; };
+		14FB15ED1931F85000021E7F /* napa.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 14FB15EB1931F85000021E7F /* napa.xcdatamodeld */; };
+		14FB15F01931F85000021E7F /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FB15EF1931F85000021E7F /* MasterViewController.m */; };
+		14FB15F31931F85000021E7F /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FB15F21931F85000021E7F /* DetailViewController.m */; };
+		14FB15F51931F85000021E7F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14FB15F41931F85000021E7F /* Images.xcassets */; };
+		14FB15FC1931F85000021E7F /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14FB15FB1931F85000021E7F /* XCTest.framework */; };
+		14FB15FD1931F85000021E7F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14FB15D41931F85000021E7F /* Foundation.framework */; };
+		14FB15FE1931F85000021E7F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14FB15D81931F85000021E7F /* UIKit.framework */; };
+		14FB15FF1931F85000021E7F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14FB15DA1931F85000021E7F /* CoreData.framework */; };
+		14FB16071931F85000021E7F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 14FB16051931F85000021E7F /* InfoPlist.strings */; };
+		14FB16091931F85000021E7F /* napaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FB16081931F85000021E7F /* napaTests.m */; };
+		14FB16141931FCDD00021E7F /* TripViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FB16131931FCDD00021E7F /* TripViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		14AB32C81931004A002E9D30 /* PBXContainerItemProxy */ = {
+		14FB16001931F85000021E7F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 14AB329119310049002E9D30 /* Project object */;
+			containerPortal = 14FB15C91931F85000021E7F /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 14AB329819310049002E9D30;
+			remoteGlobalIDString = 14FB15D01931F85000021E7F;
 			remoteInfo = napa;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		14AB329919310049002E9D30 /* napa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = napa.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		14AB329C19310049002E9D30 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		14AB329E19310049002E9D30 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		14AB32A019310049002E9D30 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		14AB32A219310049002E9D30 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		14AB32A619310049002E9D30 /* napa-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "napa-Info.plist"; sourceTree = "<group>"; };
-		14AB32A819310049002E9D30 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		14AB32AA19310049002E9D30 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		14AB32AC19310049002E9D30 /* napa-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "napa-Prefix.pch"; sourceTree = "<group>"; };
-		14AB32AD19310049002E9D30 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		14AB32AE19310049002E9D30 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		14AB32B119310049002E9D30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		14AB32B419310049002E9D30 /* napa.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = napa.xcdatamodel; sourceTree = "<group>"; };
-		14AB32B619310049002E9D30 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
-		14AB32B719310049002E9D30 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
-		14AB32B919310049002E9D30 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		14AB32BA19310049002E9D30 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
-		14AB32BC19310049002E9D30 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		14AB32C21931004A002E9D30 /* napaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = napaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		14AB32C31931004A002E9D30 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		14AB32CC1931004A002E9D30 /* napaTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "napaTests-Info.plist"; sourceTree = "<group>"; };
-		14AB32CE1931004A002E9D30 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		14AB32D01931004A002E9D30 /* napaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = napaTests.m; sourceTree = "<group>"; };
+		1416A059194DFFA900E0D89F /* TextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldCell.h; sourceTree = "<group>"; };
+		1416A05A194DFFA900E0D89F /* TextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextFieldCell.m; sourceTree = "<group>"; };
+		14952A6B1955E1B300B8D34A /* DateCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateCell.h; sourceTree = "<group>"; };
+		14952A6C1955E1B300B8D34A /* DateCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateCell.m; sourceTree = "<group>"; };
+		14F74C131932465D00BA28C7 /* NewTripViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewTripViewController.h; sourceTree = "<group>"; };
+		14F74C141932465D00BA28C7 /* NewTripViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewTripViewController.m; sourceTree = "<group>"; };
+		14F74C1919324E5600BA28C7 /* NSDate+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Additions.h"; sourceTree = "<group>"; };
+		14F74C1A19324E5600BA28C7 /* NSDate+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Additions.m"; sourceTree = "<group>"; };
+		14F74C1C19324FC900BA28C7 /* Trip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Trip.h; sourceTree = "<group>"; };
+		14F74C1D19324FC900BA28C7 /* Trip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Trip.m; sourceTree = "<group>"; };
+		14FB15D11931F85000021E7F /* napa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = napa.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		14FB15D41931F85000021E7F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		14FB15D61931F85000021E7F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		14FB15D81931F85000021E7F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		14FB15DA1931F85000021E7F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		14FB15DE1931F85000021E7F /* napa-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "napa-Info.plist"; sourceTree = "<group>"; };
+		14FB15E01931F85000021E7F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		14FB15E21931F85000021E7F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		14FB15E41931F85000021E7F /* napa-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "napa-Prefix.pch"; sourceTree = "<group>"; };
+		14FB15E51931F85000021E7F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		14FB15E61931F85000021E7F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		14FB15E91931F85000021E7F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		14FB15EC1931F85000021E7F /* napa.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = napa.xcdatamodel; sourceTree = "<group>"; };
+		14FB15EE1931F85000021E7F /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
+		14FB15EF1931F85000021E7F /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
+		14FB15F11931F85000021E7F /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		14FB15F21931F85000021E7F /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		14FB15F41931F85000021E7F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		14FB15FA1931F85000021E7F /* napaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = napaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		14FB15FB1931F85000021E7F /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		14FB16041931F85000021E7F /* napaTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "napaTests-Info.plist"; sourceTree = "<group>"; };
+		14FB16061931F85000021E7F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		14FB16081931F85000021E7F /* napaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = napaTests.m; sourceTree = "<group>"; };
+		14FB16121931FCDD00021E7F /* TripViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TripViewCell.h; sourceTree = "<group>"; };
+		14FB16131931FCDD00021E7F /* TripViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TripViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		14AB329619310049002E9D30 /* Frameworks */ = {
+		14FB15CE1931F85000021E7F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				14AB329F19310049002E9D30 /* CoreGraphics.framework in Frameworks */,
-				14AB32A319310049002E9D30 /* CoreData.framework in Frameworks */,
-				14AB32A119310049002E9D30 /* UIKit.framework in Frameworks */,
-				14AB329D19310049002E9D30 /* Foundation.framework in Frameworks */,
+				14FB15D71931F85000021E7F /* CoreGraphics.framework in Frameworks */,
+				14FB15DB1931F85000021E7F /* CoreData.framework in Frameworks */,
+				14FB15D91931F85000021E7F /* UIKit.framework in Frameworks */,
+				14FB15D51931F85000021E7F /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		14AB32BF1931004A002E9D30 /* Frameworks */ = {
+		14FB15F71931F85000021E7F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				14AB32C41931004A002E9D30 /* XCTest.framework in Frameworks */,
-				14AB32C71931004A002E9D30 /* CoreData.framework in Frameworks */,
-				14AB32C61931004A002E9D30 /* UIKit.framework in Frameworks */,
-				14AB32C51931004A002E9D30 /* Foundation.framework in Frameworks */,
+				14FB15FC1931F85000021E7F /* XCTest.framework in Frameworks */,
+				14FB15FF1931F85000021E7F /* CoreData.framework in Frameworks */,
+				14FB15FE1931F85000021E7F /* UIKit.framework in Frameworks */,
+				14FB15FD1931F85000021E7F /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		14AB329019310049002E9D30 = {
+		14FB15C81931F85000021E7F = {
 			isa = PBXGroup;
 			children = (
-				14AB32A419310049002E9D30 /* napa */,
-				14AB32CA1931004A002E9D30 /* napaTests */,
-				14AB329B19310049002E9D30 /* Frameworks */,
-				14AB329A19310049002E9D30 /* Products */,
+				14FB15DC1931F85000021E7F /* napa */,
+				14FB16021931F85000021E7F /* napaTests */,
+				14FB15D31931F85000021E7F /* Frameworks */,
+				14FB15D21931F85000021E7F /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		14AB329A19310049002E9D30 /* Products */ = {
+		14FB15D21931F85000021E7F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				14AB329919310049002E9D30 /* napa.app */,
-				14AB32C21931004A002E9D30 /* napaTests.xctest */,
+				14FB15D11931F85000021E7F /* napa.app */,
+				14FB15FA1931F85000021E7F /* napaTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		14AB329B19310049002E9D30 /* Frameworks */ = {
+		14FB15D31931F85000021E7F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				14AB329C19310049002E9D30 /* Foundation.framework */,
-				14AB329E19310049002E9D30 /* CoreGraphics.framework */,
-				14AB32A019310049002E9D30 /* UIKit.framework */,
-				14AB32A219310049002E9D30 /* CoreData.framework */,
-				14AB32C31931004A002E9D30 /* XCTest.framework */,
+				14FB15D41931F85000021E7F /* Foundation.framework */,
+				14FB15D61931F85000021E7F /* CoreGraphics.framework */,
+				14FB15D81931F85000021E7F /* UIKit.framework */,
+				14FB15DA1931F85000021E7F /* CoreData.framework */,
+				14FB15FB1931F85000021E7F /* XCTest.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		14AB32A419310049002E9D30 /* napa */ = {
+		14FB15DC1931F85000021E7F /* napa */ = {
 			isa = PBXGroup;
 			children = (
-				14AB32AD19310049002E9D30 /* AppDelegate.h */,
-				14AB32AE19310049002E9D30 /* AppDelegate.m */,
-				14AB32B019310049002E9D30 /* Main.storyboard */,
-				14AB32B619310049002E9D30 /* MasterViewController.h */,
-				14AB32B719310049002E9D30 /* MasterViewController.m */,
-				14AB32B919310049002E9D30 /* DetailViewController.h */,
-				14AB32BA19310049002E9D30 /* DetailViewController.m */,
-				14AB32BC19310049002E9D30 /* Images.xcassets */,
-				14AB32B319310049002E9D30 /* napa.xcdatamodeld */,
-				14AB32A519310049002E9D30 /* Supporting Files */,
+				14FB16151931FD0E00021E7F /* Classes */,
+				14FB15E81931F85000021E7F /* Main.storyboard */,
+				14FB15F41931F85000021E7F /* Images.xcassets */,
+				14FB15EB1931F85000021E7F /* napa.xcdatamodeld */,
+				14FB15DD1931F85000021E7F /* Supporting Files */,
 			);
 			path = napa;
 			sourceTree = "<group>";
 		};
-		14AB32A519310049002E9D30 /* Supporting Files */ = {
+		14FB15DD1931F85000021E7F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				14AB32A619310049002E9D30 /* napa-Info.plist */,
-				14AB32A719310049002E9D30 /* InfoPlist.strings */,
-				14AB32AA19310049002E9D30 /* main.m */,
-				14AB32AC19310049002E9D30 /* napa-Prefix.pch */,
+				14FB15DE1931F85000021E7F /* napa-Info.plist */,
+				14FB15DF1931F85000021E7F /* InfoPlist.strings */,
+				14FB15E21931F85000021E7F /* main.m */,
+				14FB15E41931F85000021E7F /* napa-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		14AB32CA1931004A002E9D30 /* napaTests */ = {
+		14FB16021931F85000021E7F /* napaTests */ = {
 			isa = PBXGroup;
 			children = (
-				14AB32D01931004A002E9D30 /* napaTests.m */,
-				14AB32CB1931004A002E9D30 /* Supporting Files */,
+				14FB16081931F85000021E7F /* napaTests.m */,
+				14FB16031931F85000021E7F /* Supporting Files */,
 			);
 			path = napaTests;
 			sourceTree = "<group>";
 		};
-		14AB32CB1931004A002E9D30 /* Supporting Files */ = {
+		14FB16031931F85000021E7F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				14AB32CC1931004A002E9D30 /* napaTests-Info.plist */,
-				14AB32CD1931004A002E9D30 /* InfoPlist.strings */,
+				14FB16041931F85000021E7F /* napaTests-Info.plist */,
+				14FB16051931F85000021E7F /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		14FB16151931FD0E00021E7F /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				14FB15E51931F85000021E7F /* AppDelegate.h */,
+				14FB15E61931F85000021E7F /* AppDelegate.m */,
+				14FB15EE1931F85000021E7F /* MasterViewController.h */,
+				14FB15EF1931F85000021E7F /* MasterViewController.m */,
+				14FB15F11931F85000021E7F /* DetailViewController.h */,
+				14FB15F21931F85000021E7F /* DetailViewController.m */,
+				14FB16121931FCDD00021E7F /* TripViewCell.h */,
+				14FB16131931FCDD00021E7F /* TripViewCell.m */,
+				14F74C131932465D00BA28C7 /* NewTripViewController.h */,
+				14F74C141932465D00BA28C7 /* NewTripViewController.m */,
+				14F74C1C19324FC900BA28C7 /* Trip.h */,
+				14F74C1D19324FC900BA28C7 /* Trip.m */,
+				14F74C1919324E5600BA28C7 /* NSDate+Additions.h */,
+				14F74C1A19324E5600BA28C7 /* NSDate+Additions.m */,
+				1416A059194DFFA900E0D89F /* TextFieldCell.h */,
+				1416A05A194DFFA900E0D89F /* TextFieldCell.m */,
+				14952A6B1955E1B300B8D34A /* DateCell.h */,
+				14952A6C1955E1B300B8D34A /* DateCell.m */,
+			);
+			name = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		14AB329819310049002E9D30 /* napa */ = {
+		14FB15D01931F85000021E7F /* napa */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 14AB32D41931004A002E9D30 /* Build configuration list for PBXNativeTarget "napa" */;
+			buildConfigurationList = 14FB160C1931F85000021E7F /* Build configuration list for PBXNativeTarget "napa" */;
 			buildPhases = (
-				14AB329519310049002E9D30 /* Sources */,
-				14AB329619310049002E9D30 /* Frameworks */,
-				14AB329719310049002E9D30 /* Resources */,
+				14FB15CD1931F85000021E7F /* Sources */,
+				14FB15CE1931F85000021E7F /* Frameworks */,
+				14FB15CF1931F85000021E7F /* Resources */,
 			);
 			buildRules = (
 			);
@@ -183,42 +221,42 @@
 			);
 			name = napa;
 			productName = napa;
-			productReference = 14AB329919310049002E9D30 /* napa.app */;
+			productReference = 14FB15D11931F85000021E7F /* napa.app */;
 			productType = "com.apple.product-type.application";
 		};
-		14AB32C11931004A002E9D30 /* napaTests */ = {
+		14FB15F91931F85000021E7F /* napaTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 14AB32D71931004A002E9D30 /* Build configuration list for PBXNativeTarget "napaTests" */;
+			buildConfigurationList = 14FB160F1931F85000021E7F /* Build configuration list for PBXNativeTarget "napaTests" */;
 			buildPhases = (
-				14AB32BE1931004A002E9D30 /* Sources */,
-				14AB32BF1931004A002E9D30 /* Frameworks */,
-				14AB32C01931004A002E9D30 /* Resources */,
+				14FB15F61931F85000021E7F /* Sources */,
+				14FB15F71931F85000021E7F /* Frameworks */,
+				14FB15F81931F85000021E7F /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				14AB32C91931004A002E9D30 /* PBXTargetDependency */,
+				14FB16011931F85000021E7F /* PBXTargetDependency */,
 			);
 			name = napaTests;
 			productName = napaTests;
-			productReference = 14AB32C21931004A002E9D30 /* napaTests.xctest */;
+			productReference = 14FB15FA1931F85000021E7F /* napaTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		14AB329119310049002E9D30 /* Project object */ = {
+		14FB15C91931F85000021E7F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0510;
-				ORGANIZATIONNAME = "Remy JOURDE";
+				ORGANIZATIONNAME = "Remy Jourde";
 				TargetAttributes = {
-					14AB32C11931004A002E9D30 = {
-						TestTargetID = 14AB329819310049002E9D30;
+					14FB15F91931F85000021E7F = {
+						TestTargetID = 14FB15D01931F85000021E7F;
 					};
 				};
 			};
-			buildConfigurationList = 14AB329419310049002E9D30 /* Build configuration list for PBXProject "napa" */;
+			buildConfigurationList = 14FB15CC1931F85000021E7F /* Build configuration list for PBXProject "napa" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -226,90 +264,96 @@
 				en,
 				Base,
 			);
-			mainGroup = 14AB329019310049002E9D30;
-			productRefGroup = 14AB329A19310049002E9D30 /* Products */;
+			mainGroup = 14FB15C81931F85000021E7F;
+			productRefGroup = 14FB15D21931F85000021E7F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				14AB329819310049002E9D30 /* napa */,
-				14AB32C11931004A002E9D30 /* napaTests */,
+				14FB15D01931F85000021E7F /* napa */,
+				14FB15F91931F85000021E7F /* napaTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		14AB329719310049002E9D30 /* Resources */ = {
+		14FB15CF1931F85000021E7F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				14AB32BD19310049002E9D30 /* Images.xcassets in Resources */,
-				14AB32A919310049002E9D30 /* InfoPlist.strings in Resources */,
-				14AB32B219310049002E9D30 /* Main.storyboard in Resources */,
+				14FB15F51931F85000021E7F /* Images.xcassets in Resources */,
+				14FB15E11931F85000021E7F /* InfoPlist.strings in Resources */,
+				14FB15EA1931F85000021E7F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		14AB32C01931004A002E9D30 /* Resources */ = {
+		14FB15F81931F85000021E7F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				14AB32CF1931004A002E9D30 /* InfoPlist.strings in Resources */,
+				14FB16071931F85000021E7F /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		14AB329519310049002E9D30 /* Sources */ = {
+		14FB15CD1931F85000021E7F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				14AB32BB19310049002E9D30 /* DetailViewController.m in Sources */,
-				14AB32B819310049002E9D30 /* MasterViewController.m in Sources */,
-				14AB32B519310049002E9D30 /* napa.xcdatamodeld in Sources */,
-				14AB32AF19310049002E9D30 /* AppDelegate.m in Sources */,
-				14AB32AB19310049002E9D30 /* main.m in Sources */,
+				14F74C1B19324E5600BA28C7 /* NSDate+Additions.m in Sources */,
+				14FB15F31931F85000021E7F /* DetailViewController.m in Sources */,
+				14FB15F01931F85000021E7F /* MasterViewController.m in Sources */,
+				14FB15ED1931F85000021E7F /* napa.xcdatamodeld in Sources */,
+				14FB15E71931F85000021E7F /* AppDelegate.m in Sources */,
+				1416A05B194DFFA900E0D89F /* TextFieldCell.m in Sources */,
+				14FB15E31931F85000021E7F /* main.m in Sources */,
+				14952A6D1955E1B300B8D34A /* DateCell.m in Sources */,
+				14FB16141931FCDD00021E7F /* TripViewCell.m in Sources */,
+				14F74C151932465D00BA28C7 /* NewTripViewController.m in Sources */,
+				14F74C1E19324FC900BA28C7 /* Trip.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		14AB32BE1931004A002E9D30 /* Sources */ = {
+		14FB15F61931F85000021E7F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				14AB32D11931004A002E9D30 /* napaTests.m in Sources */,
+				14FB16091931F85000021E7F /* napaTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		14AB32C91931004A002E9D30 /* PBXTargetDependency */ = {
+		14FB16011931F85000021E7F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 14AB329819310049002E9D30 /* napa */;
-			targetProxy = 14AB32C81931004A002E9D30 /* PBXContainerItemProxy */;
+			target = 14FB15D01931F85000021E7F /* napa */;
+			targetProxy = 14FB16001931F85000021E7F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		14AB32A719310049002E9D30 /* InfoPlist.strings */ = {
+		14FB15DF1931F85000021E7F /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				14AB32A819310049002E9D30 /* en */,
+				14FB15E01931F85000021E7F /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		14AB32B019310049002E9D30 /* Main.storyboard */ = {
+		14FB15E81931F85000021E7F /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				14AB32B119310049002E9D30 /* Base */,
+				14FB15E91931F85000021E7F /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		14AB32CD1931004A002E9D30 /* InfoPlist.strings */ = {
+		14FB16051931F85000021E7F /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				14AB32CE1931004A002E9D30 /* en */,
+				14FB16061931F85000021E7F /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -317,7 +361,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		14AB32D21931004A002E9D30 /* Debug */ = {
+		14FB160A1931F85000021E7F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -355,7 +399,7 @@
 			};
 			name = Debug;
 		};
-		14AB32D31931004A002E9D30 /* Release */ = {
+		14FB160B1931F85000021E7F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -387,7 +431,7 @@
 			};
 			name = Release;
 		};
-		14AB32D51931004A002E9D30 /* Debug */ = {
+		14FB160D1931F85000021E7F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -400,7 +444,7 @@
 			};
 			name = Debug;
 		};
-		14AB32D61931004A002E9D30 /* Release */ = {
+		14FB160E1931F85000021E7F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -413,7 +457,7 @@
 			};
 			name = Release;
 		};
-		14AB32D81931004A002E9D30 /* Debug */ = {
+		14FB16101931F85000021E7F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/napa.app/napa";
@@ -435,7 +479,7 @@
 			};
 			name = Debug;
 		};
-		14AB32D91931004A002E9D30 /* Release */ = {
+		14FB16111931F85000021E7F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/napa.app/napa";
@@ -456,45 +500,47 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		14AB329419310049002E9D30 /* Build configuration list for PBXProject "napa" */ = {
+		14FB15CC1931F85000021E7F /* Build configuration list for PBXProject "napa" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				14AB32D21931004A002E9D30 /* Debug */,
-				14AB32D31931004A002E9D30 /* Release */,
+				14FB160A1931F85000021E7F /* Debug */,
+				14FB160B1931F85000021E7F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		14AB32D41931004A002E9D30 /* Build configuration list for PBXNativeTarget "napa" */ = {
+		14FB160C1931F85000021E7F /* Build configuration list for PBXNativeTarget "napa" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				14AB32D51931004A002E9D30 /* Debug */,
-				14AB32D61931004A002E9D30 /* Release */,
+				14FB160D1931F85000021E7F /* Debug */,
+				14FB160E1931F85000021E7F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
-		14AB32D71931004A002E9D30 /* Build configuration list for PBXNativeTarget "napaTests" */ = {
+		14FB160F1931F85000021E7F /* Build configuration list for PBXNativeTarget "napaTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				14AB32D81931004A002E9D30 /* Debug */,
-				14AB32D91931004A002E9D30 /* Release */,
+				14FB16101931F85000021E7F /* Debug */,
+				14FB16111931F85000021E7F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		14AB32B319310049002E9D30 /* napa.xcdatamodeld */ = {
+		14FB15EB1931F85000021E7F /* napa.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				14AB32B419310049002E9D30 /* napa.xcdatamodel */,
+				14FB15EC1931F85000021E7F /* napa.xcdatamodel */,
 			);
-			currentVersion = 14AB32B419310049002E9D30 /* napa.xcdatamodel */;
+			currentVersion = 14FB15EC1931F85000021E7F /* napa.xcdatamodel */;
 			path = napa.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
 /* End XCVersionGroup section */
 	};
-	rootObject = 14AB329119310049002E9D30 /* Project object */;
+	rootObject = 14FB15C91931F85000021E7F /* Project object */;
 }

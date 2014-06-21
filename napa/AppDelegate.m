@@ -2,8 +2,8 @@
 //  AppDelegate.m
 //  napa
 //
-//  Created by Remy JOURDE on 24/05/2014.
-//  Copyright (c) 2014 Remy JOURDE. All rights reserved.
+//  Created by Remy JOURDE on 25/05/2014.
+//  Copyright (c) 2014 Remy Jourde. All rights reserved.
 //
 
 #import "AppDelegate.h"
@@ -105,7 +105,7 @@
         return _persistentStoreCoordinator;
     }
     
-    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"napa.sqlite"];
+    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"napa_1.1.sqlite"];
     
     NSError *error = nil;
     _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];

@@ -2,8 +2,8 @@
 //  napaTests.m
 //  napaTests
 //
-//  Created by Remy JOURDE on 24/05/2014.
-//  Copyright (c) 2014 Remy JOURDE. All rights reserved.
+//  Created by Remy JOURDE on 25/05/2014.
+//  Copyright (c) 2014 Remy Jourde. All rights reserved.
 //
 
 #import <XCTest/XCTest.h>
