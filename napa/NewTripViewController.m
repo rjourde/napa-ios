@@ -416,19 +416,8 @@ UITextField *nameTextField; // textfield of the name cell
  */
 - (IBAction)dateAction:(id)sender
 {
-    NSIndexPath *targetedCellIndexPath = nil;
-    
-    if ([self hasInlineDatePicker])
-    {
-        // inline date picker: update the cell's date "above" the date picker cell
-        //
-        targetedCellIndexPath = [NSIndexPath indexPathForRow:self.datePickerIndexPath.row - 1 inSection:kDateSection];
-    }
-    else
-    {
-        // external date picker: update the current "selected" cell's date
-        targetedCellIndexPath = [self.tableView indexPathForSelectedRow];
-    }
+    // update the cell's date "above" the date picker cell
+    NSIndexPath *targetedCellIndexPath = [NSIndexPath indexPathForRow:self.datePickerIndexPath.row - 1 inSection:kDateSection];
     
     UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:targetedCellIndexPath];
     UIDatePicker *targetedDatePicker = sender;
@@ -444,11 +433,25 @@ UITextField *nameTextField; // textfield of the name cell
     NSDate *startDate = [self.dataArray[0] valueForKey:kDateKey];
     NSDate *endDate = [self.dataArray[1] valueForKey:kDateKey];
     
-    if([endDate isEarlierThan:startDate])
+    // update end date cell if start date picker is active
+    if(self.datePickerIndexPath.row - 1 == kDateStartRow && [startDate isLaterThan:endDate])
+    {
+        // update the end date cell
+        NSIndexPath *endDateCellIndexPath = [NSIndexPath indexPathForRow:self.datePickerIndexPath.row + 1 inSection:kDateSection];
+        UITableViewCell *endDatecell = [self.tableView cellForRowAtIndexPath:endDateCellIndexPath];
+        endDatecell.detailTextLabel.text = [self.dateFormatter stringFromDate:targetedDatePicker.date];
+        
+        // update date array with new date
+        NSMutableDictionary *itemData = self.dataArray[kDateEndRow];
+        [itemData setValue:targetedDatePicker.date forKey:kDateKey];
+    }
+    
+    // add strike through end date cell if end date picker is active
+    if(self.datePickerIndexPath.row - 1 == kDateEndRow && [endDate isEarlierThan:startDate])
     {
         NSMutableAttributedString *attributeString = [[NSMutableAttributedString alloc] initWithString:cell.detailTextLabel.text];
-        [attributeString addAttribute:NSStrikethroughStyleAttributeName value:@1 range:NSMakeRange(0, [attributeString length])];
-        cell.detailTextLabel.attributedText = attributeString;
+         [attributeString addAttribute:NSStrikethroughStyleAttributeName value:@1 range:NSMakeRange(0, [attributeString length])];
+         cell.detailTextLabel.attributedText = attributeString;
     }
 }
 
