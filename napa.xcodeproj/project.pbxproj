@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1416A05B194DFFA900E0D89F /* TextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1416A05A194DFFA900E0D89F /* TextFieldCell.m */; };
+		1428B4A2196077C800AD2187 /* PersistentStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 1428B4A1196077C800AD2187 /* PersistentStack.m */; };
+		1428B4A519607C1200AD2187 /* TripsViewControllerDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 1428B4A419607C1200AD2187 /* TripsViewControllerDataSource.m */; };
 		14952A6D1955E1B300B8D34A /* DateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 14952A6C1955E1B300B8D34A /* DateCell.m */; };
 		14F74C151932465D00BA28C7 /* NewTripViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F74C141932465D00BA28C7 /* NewTripViewController.m */; };
 		14F74C1B19324E5600BA28C7 /* NSDate+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F74C1A19324E5600BA28C7 /* NSDate+Additions.m */; };
@@ -21,7 +23,7 @@
 		14FB15E71931F85000021E7F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FB15E61931F85000021E7F /* AppDelegate.m */; };
 		14FB15EA1931F85000021E7F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14FB15E81931F85000021E7F /* Main.storyboard */; };
 		14FB15ED1931F85000021E7F /* napa.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 14FB15EB1931F85000021E7F /* napa.xcdatamodeld */; };
-		14FB15F01931F85000021E7F /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FB15EF1931F85000021E7F /* MasterViewController.m */; };
+		14FB15F01931F85000021E7F /* TripsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FB15EF1931F85000021E7F /* TripsViewController.m */; };
 		14FB15F31931F85000021E7F /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FB15F21931F85000021E7F /* DetailViewController.m */; };
 		14FB15F51931F85000021E7F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14FB15F41931F85000021E7F /* Images.xcassets */; };
 		14FB15FC1931F85000021E7F /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14FB15FB1931F85000021E7F /* XCTest.framework */; };
@@ -47,6 +49,10 @@
 /* Begin PBXFileReference section */
 		1416A059194DFFA900E0D89F /* TextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldCell.h; sourceTree = "<group>"; };
 		1416A05A194DFFA900E0D89F /* TextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextFieldCell.m; sourceTree = "<group>"; };
+		1428B4A0196077C800AD2187 /* PersistentStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersistentStack.h; sourceTree = "<group>"; };
+		1428B4A1196077C800AD2187 /* PersistentStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersistentStack.m; sourceTree = "<group>"; };
+		1428B4A319607C1200AD2187 /* TripsViewControllerDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TripsViewControllerDataSource.h; sourceTree = "<group>"; };
+		1428B4A419607C1200AD2187 /* TripsViewControllerDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TripsViewControllerDataSource.m; sourceTree = "<group>"; };
 		14952A6B1955E1B300B8D34A /* DateCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateCell.h; sourceTree = "<group>"; };
 		14952A6C1955E1B300B8D34A /* DateCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateCell.m; sourceTree = "<group>"; };
 		14F74C131932465D00BA28C7 /* NewTripViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewTripViewController.h; sourceTree = "<group>"; };
@@ -68,8 +74,8 @@
 		14FB15E61931F85000021E7F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		14FB15E91931F85000021E7F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		14FB15EC1931F85000021E7F /* napa.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = napa.xcdatamodel; sourceTree = "<group>"; };
-		14FB15EE1931F85000021E7F /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
-		14FB15EF1931F85000021E7F /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
+		14FB15EE1931F85000021E7F /* TripsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TripsViewController.h; sourceTree = "<group>"; };
+		14FB15EF1931F85000021E7F /* TripsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TripsViewController.m; sourceTree = "<group>"; };
 		14FB15F11931F85000021E7F /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		14FB15F21931F85000021E7F /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		14FB15F41931F85000021E7F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -187,8 +193,8 @@
 			children = (
 				14FB15E51931F85000021E7F /* AppDelegate.h */,
 				14FB15E61931F85000021E7F /* AppDelegate.m */,
-				14FB15EE1931F85000021E7F /* MasterViewController.h */,
-				14FB15EF1931F85000021E7F /* MasterViewController.m */,
+				14FB15EE1931F85000021E7F /* TripsViewController.h */,
+				14FB15EF1931F85000021E7F /* TripsViewController.m */,
 				14FB15F11931F85000021E7F /* DetailViewController.h */,
 				14FB15F21931F85000021E7F /* DetailViewController.m */,
 				14FB16121931FCDD00021E7F /* TripViewCell.h */,
@@ -203,6 +209,10 @@
 				1416A05A194DFFA900E0D89F /* TextFieldCell.m */,
 				14952A6B1955E1B300B8D34A /* DateCell.h */,
 				14952A6C1955E1B300B8D34A /* DateCell.m */,
+				1428B4A0196077C800AD2187 /* PersistentStack.h */,
+				1428B4A1196077C800AD2187 /* PersistentStack.m */,
+				1428B4A319607C1200AD2187 /* TripsViewControllerDataSource.h */,
+				1428B4A419607C1200AD2187 /* TripsViewControllerDataSource.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -307,7 +317,9 @@
 			files = (
 				14F74C1B19324E5600BA28C7 /* NSDate+Additions.m in Sources */,
 				14FB15F31931F85000021E7F /* DetailViewController.m in Sources */,
-				14FB15F01931F85000021E7F /* MasterViewController.m in Sources */,
+				14FB15F01931F85000021E7F /* TripsViewController.m in Sources */,
+				1428B4A2196077C800AD2187 /* PersistentStack.m in Sources */,
+				1428B4A519607C1200AD2187 /* TripsViewControllerDataSource.m in Sources */,
 				14FB15ED1931F85000021E7F /* napa.xcdatamodeld in Sources */,
 				14FB15E71931F85000021E7F /* AppDelegate.m in Sources */,
 				1416A05B194DFFA900E0D89F /* TextFieldCell.m in Sources */,

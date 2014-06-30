@@ -8,13 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-#import <CoreData/CoreData.h>
-
 #import "NewTripViewController.h"
 
-@interface MasterViewController : UICollectionViewController <NSFetchedResultsControllerDelegate, NewTripViewControllerDelegate>
+@class TripsViewControllerDataSource;
 
-@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
+@interface TripsViewController : UICollectionViewController
+
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
 @end

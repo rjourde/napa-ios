@@ -388,13 +388,10 @@ UITextField *nameTextField; // textfield of the name cell
     // Before creating a new trip, check if the dates are valid
     if([startDate isEarlierThanOrEqualTo:endDate])
     {
-        NSManagedObjectContext *context = [self managedObjectContext];
-        Trip *trip = [NSEntityDescription insertNewObjectForEntityForName:@"Trip" inManagedObjectContext:context];
-        trip.name = nameTextField.text;
-        trip.startDate = startDate;
-        trip.endDate = endDate;
-        
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"newTripAdded" object:nil];
+        [Trip insertTripWithName:nameTextField.text
+                       startDate:startDate
+                         endDate:endDate
+          inManagedObjectContext:self.managedObjectContext];
         
         [self.delegate newTripViewControllerDidDone:self];
     }
