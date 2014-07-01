@@ -11,12 +11,11 @@
 
 @implementation Trip
 
-@dynamic icon;
 @dynamic name;
 @dynamic startDate;
 @dynamic endDate;
 
-+(instancetype)insertTripWithName:(NSString*)name
++ (instancetype)insertTripWithName:(NSString*)name
                          startDate:(NSDate*)startDate
                            endDate:(NSDate*)endDate
             inManagedObjectContext:(NSManagedObjectContext*)managedObjectContext

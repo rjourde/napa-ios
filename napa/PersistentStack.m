@@ -11,45 +11,78 @@
 @interface PersistentStack ()
 
 @property (nonatomic,strong,readwrite) NSManagedObjectContext* managedObjectContext;
+@property (nonatomic,strong,readwrite) NSManagedObjectModel *managedObjectModel;
+@property (nonatomic,strong,readwrite) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 
 @end
 
 @implementation PersistentStack
 
-- (id)init
+- (void)saveContext
 {
-    self = [super init];
-    if (self) {
-        [self setupManagedObjectContext];
+    NSError *error = nil;
+    NSManagedObjectContext *managedObjectContext = self.managedObjectContext;
+    if (managedObjectContext != nil) {
+        if ([managedObjectContext hasChanges] && ![managedObjectContext save:&error])
+        {
+            // Replace this implementation with code to handle the error appropriately.
+            // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+            abort();
+        }
     }
-    return self;
 }
 
-- (void)setupManagedObjectContext
+#pragma mark - Core Data stack
+
+
+- (NSManagedObjectContext *)managedObjectContext
 {
-    self.managedObjectContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
-    self.managedObjectContext.persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:self.managedObjectModel];
-    NSError* error;
-    [self.managedObjectContext.persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:self.storeURL options:nil error:&error];
-    if (error) {
-        NSLog(@"error: %@", error);
+    if (_managedObjectContext != nil)
+    {
+        return _managedObjectContext;
     }
-    self.managedObjectContext.undoManager = [[NSUndoManager alloc] init];
+    
+    NSPersistentStoreCoordinator *coordinator = [self persistentStoreCoordinator];
+    if (coordinator != nil)
+    {
+        _managedObjectContext = [[NSManagedObjectContext alloc] init];
+        [_managedObjectContext setPersistentStoreCoordinator:coordinator];
+    }
+    return _managedObjectContext;
 }
 
-- (NSManagedObjectModel*)managedObjectModel
+- (NSManagedObjectModel *)managedObjectModel
 {
-    return [[NSManagedObjectModel alloc] initWithContentsOfURL:self.modelURL];
+    if (_managedObjectModel != nil)
+    {
+        return _managedObjectModel;
+    }
+    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"napa" withExtension:@"momd"];
+    self.managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
+    return self.managedObjectModel;
 }
 
-- (NSURL*)storeURL
+- (NSPersistentStoreCoordinator *)persistentStoreCoordinator
 {
-    return [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"napa_1.2.sqlite"];
-}
-
-- (NSURL*)modelURL
-{
-    return [[NSBundle mainBundle] URLForResource:@"napa" withExtension:@"momd"];
+    if (_persistentStoreCoordinator != nil)
+    {
+        return _persistentStoreCoordinator;
+    }
+    
+    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"napa_1.3.sqlite"];
+    
+    NSError *error = nil;
+    _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
+    if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType
+                                                   configuration:nil URL:storeURL
+                                                         options:nil
+                                                           error:&error])
+    {
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+    }
+    
+    return _persistentStoreCoordinator;
 }
 
 #pragma mark - Application's Documents directory

@@ -10,9 +10,6 @@
 
 @interface TripViewCell : UICollectionViewCell
 
-@property (strong, nonatomic) IBOutlet UIImageView *iconView;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
-
--(void)setIcon:(UIImage *)icon;
 
 @end

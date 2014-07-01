@@ -208,7 +208,6 @@ NSMutableArray *_sectionChanges;
 
 - (id)selectedItem
 {
-    
     NSIndexPath* path = [self.collectionView.indexPathsForSelectedItems lastObject];
     return path ? [self.fetchedResultsController objectAtIndexPath:path] : nil;
 }

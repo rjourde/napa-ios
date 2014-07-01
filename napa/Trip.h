@@ -12,16 +12,15 @@
 
 @interface Trip : NSManagedObject
 
-@property (nonatomic, retain) NSData * icon;
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, retain) NSDate * startDate;
 @property (nonatomic, retain) NSDate * endDate;
 
-+(instancetype)insertTripWithName:(NSString*)name
++ (instancetype)insertTripWithName:(NSString*)name
                          startDate:(NSDate*)startDate
                            endDate:(NSDate*)endDate
             inManagedObjectContext:(NSManagedObjectContext*)managedObjectContext;
 
-+(NSFetchedResultsController*)tripsFetchedResultsControllerInManagedObjectContext:(NSManagedObjectContext*)managedObjectContext;
++ (NSFetchedResultsController*)tripsFetchedResultsControllerInManagedObjectContext:(NSManagedObjectContext*)managedObjectContext;
 
 @end

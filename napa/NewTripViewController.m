@@ -107,7 +107,7 @@ UITextField *nameTextField; // textfield of the name cell
     // Dispose of any resources that can be recreated.
 }
 
--(void)dismissKeyboard
+- (void)dismissKeyboard
 {
     [self.view removeGestureRecognizer:self.tap];
     [nameTextField resignFirstResponder];

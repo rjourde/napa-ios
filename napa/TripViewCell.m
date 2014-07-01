@@ -10,9 +10,4 @@
 
 @implementation TripViewCell
 
--(void)setIcon:(UIImage *)icon
-{
-    [_iconView setImage:icon];
-}
-
 @end

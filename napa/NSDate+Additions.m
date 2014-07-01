@@ -10,23 +10,23 @@
 
 @implementation NSDate (Additions)
 
--(BOOL) isLaterThanOrEqualTo:(NSDate*)date
+- (BOOL) isLaterThanOrEqualTo:(NSDate*)date
 {
     return !([self compare:date] == NSOrderedAscending);
 }
 
--(BOOL) isEarlierThanOrEqualTo:(NSDate*)date
+- (BOOL) isEarlierThanOrEqualTo:(NSDate*)date
 {
     return !([self compare:date] == NSOrderedDescending);
 }
 
--(BOOL) isLaterThan:(NSDate*)date
+- (BOOL) isLaterThan:(NSDate*)date
 {
     return ([self compare:date] == NSOrderedDescending);
     
 }
 
--(BOOL) isEarlierThan:(NSDate*)date
+- (BOOL) isEarlierThan:(NSDate*)date
 {
     return ([self compare:date] == NSOrderedAscending);
 }

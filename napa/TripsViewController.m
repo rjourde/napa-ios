@@ -57,7 +57,6 @@ static NSString *knewTripSegue = @"newTrip";
     TripViewCell* cell = theCell;
     Trip* trip = object;
     cell.nameLabel.text = trip.name;
-    [cell setIcon:[UIImage imageWithData:[object valueForKey:@"icon"]]];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

@@ -31,7 +31,7 @@
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
-    [self.persistentStack.managedObjectContext save:NULL];
+    [self.persistentStack saveContext];
 }
 
 @end
