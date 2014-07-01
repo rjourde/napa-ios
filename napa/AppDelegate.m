@@ -15,8 +15,6 @@
 
 @property (nonatomic, strong) PersistentStack* persistentStack;
 
-- (NSURL *)applicationDocumentsDirectory;
-
 @end
 
 @implementation AppDelegate
@@ -26,31 +24,14 @@
     // Override point for customization after application launch.
     UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
     TripsViewController *controller = (TripsViewController *)navigationController.topViewController;
-    self.persistentStack = [[PersistentStack alloc] initWithStoreURL:self.storeURL modelURL:self.modelURL];
+    self.persistentStack = [[PersistentStack alloc] init];
     controller.managedObjectContext = self.persistentStack.managedObjectContext;
     return YES;
-}
-
-- (NSURL*)storeURL
-{
-    return [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"napa_1.2.sqlite"];
-}
-
-- (NSURL*)modelURL
-{
-    return [[NSBundle mainBundle] URLForResource:@"napa" withExtension:@"momd"];
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
     [self.persistentStack.managedObjectContext save:NULL];
-}
-#pragma mark - Application's Documents directory
-
-// Returns the URL to the application's Documents directory.
-- (NSURL *)applicationDocumentsDirectory
-{
-    return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
 }
 
 @end

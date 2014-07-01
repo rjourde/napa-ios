@@ -11,7 +11,7 @@
 
 @interface PersistentStack : NSObject
 
-- (id)initWithStoreURL:(NSURL*)storeURL modelURL:(NSURL*)modelURL;
+- (id)init;
 
 @property (nonatomic,strong,readonly) NSManagedObjectContext* managedObjectContext;
 

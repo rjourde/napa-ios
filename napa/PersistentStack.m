@@ -11,19 +11,15 @@
 @interface PersistentStack ()
 
 @property (nonatomic,strong,readwrite) NSManagedObjectContext* managedObjectContext;
-@property (nonatomic,strong) NSURL* modelURL;
-@property (nonatomic,strong) NSURL* storeURL;
 
 @end
 
 @implementation PersistentStack
 
-- (id)initWithStoreURL:(NSURL*)storeURL modelURL:(NSURL*)modelURL
+- (id)init
 {
     self = [super init];
     if (self) {
-        self.storeURL = storeURL;
-        self.modelURL = modelURL;
         [self setupManagedObjectContext];
     }
     return self;
@@ -44,6 +40,24 @@
 - (NSManagedObjectModel*)managedObjectModel
 {
     return [[NSManagedObjectModel alloc] initWithContentsOfURL:self.modelURL];
+}
+
+- (NSURL*)storeURL
+{
+    return [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"napa_1.2.sqlite"];
+}
+
+- (NSURL*)modelURL
+{
+    return [[NSBundle mainBundle] URLForResource:@"napa" withExtension:@"momd"];
+}
+
+#pragma mark - Application's Documents directory
+
+// Returns the URL to the application's Documents directory.
+- (NSURL *)applicationDocumentsDirectory
+{
+    return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
 }
 
 @end
