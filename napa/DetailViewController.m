@@ -31,6 +31,7 @@
     // Update the user interface for the detail item.
 
     if (self.detailItem) {
+        self.navigationItem.title = [[self.detailItem valueForKey:@"name"] description];
         self.NameLabel.text = [[self.detailItem valueForKey:@"name"] description];
     }
 }
