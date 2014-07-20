@@ -11,5 +11,8 @@
 @interface TripViewCell : UICollectionViewCell
 
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *daysLabel;
+@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
+@property (weak, nonatomic) IBOutlet UILabel *monthLabel;
 
 @end

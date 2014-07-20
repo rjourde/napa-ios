@@ -71,8 +71,7 @@ UITextField *nameTextField; // textfield of the name cell
     self.dataArray = @[itemOne, itemTwo];
     
     self.dateFormatter = [[NSDateFormatter alloc] init];
-    [self.dateFormatter setDateStyle:NSDateFormatterShortStyle];    // show short-style date format
-    [self.dateFormatter setTimeStyle:NSDateFormatterNoStyle];
+    [self.dateFormatter setDateStyle:NSDateFormatterMediumStyle];
     
     // obtain the picker view cell's height, works because the cell was pre-defined in our storyboard
     UITableViewCell *pickerViewCellToCheck = [self.tableView dequeueReusableCellWithIdentifier:kDatePickerID];

@@ -57,6 +57,15 @@ static NSString *knewTripSegue = @"newTrip";
     TripViewCell* cell = theCell;
     Trip* trip = object;
     cell.nameLabel.text = trip.name;
+    
+    cell.daysLabel.text = [NSString stringWithFormat:@"%ld days", [trip.startDate numberOfDaysUntilDay:trip.endDate]];
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"dd"];
+    cell.dateLabel.text = [dateFormatter stringFromDate:trip.startDate];
+    
+    [dateFormatter setDateFormat:@"MMM"];
+    cell.monthLabel.text = [dateFormatter stringFromDate:trip.startDate];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
