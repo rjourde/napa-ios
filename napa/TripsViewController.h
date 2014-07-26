@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-#import "NewTripViewController.h"
+#import "NewEditTripViewController.h"
 
 @class TripsViewControllerDataSource;
 

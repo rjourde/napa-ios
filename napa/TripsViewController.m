@@ -14,13 +14,14 @@
 #import "TripViewCell.h"
 
 static NSString *kShowTripSegue = @"showTrip";
-static NSString *knewTripSegue = @"newTrip";
+static NSString *kNewTripSegue = @"newTrip";
+static NSString *kEditTripSegue = @"editTrip";
 
 #define kDeleteButtonIndex      0
 #define kEditButtonIndex        1
 #define kCancelButtonIndex      2
 
-@interface TripsViewController () <TripsViewControllerDataSourceDelegate, NewTripViewControllerDelegate>
+@interface TripsViewController () <TripsViewControllerDataSourceDelegate, NewEditTripViewControllerDelegate>
 
 @property (nonatomic, strong) TripsViewControllerDataSource* tripsViewControllerDataSource;
 
@@ -115,12 +116,21 @@ static NSString *knewTripSegue = @"newTrip";
     if ([[segue identifier] isEqualToString:kShowTripSegue]) {
         [self presentTripViewController:segue.destinationViewController];
     }
-    if ([segue.identifier isEqualToString:knewTripSegue])
+    if ([segue.identifier isEqualToString:kNewTripSegue])
     {
         UINavigationController *navigationController = segue.destinationViewController;
-        NewTripViewController *newTripViewController = [[navigationController viewControllers] objectAtIndex:0];
+        NewEditTripViewController *newTripViewController = [[navigationController viewControllers] objectAtIndex:0];
         newTripViewController.managedObjectContext = self.managedObjectContext;
         newTripViewController.delegate = self;
+    }
+    if ([segue.identifier isEqualToString:kEditTripSegue])
+    {
+        UINavigationController *navigationController = segue.destinationViewController;
+        NewEditTripViewController *editTripViewController = [[navigationController viewControllers] objectAtIndex:0];
+        editTripViewController.managedObjectContext = self.managedObjectContext;
+        editTripViewController.editModeON = YES;
+        editTripViewController.objectToEdit = [self.tripsViewControllerDataSource itemAtIndexPath:self.selectedIndexPath];
+        editTripViewController.delegate = self;
     }
 }
 
@@ -132,12 +142,12 @@ static NSString *knewTripSegue = @"newTrip";
 
 #pragma mark - NewTripViewController delegate
 
-- (void)newTripViewControllerDidCancel:(NewTripViewController *)controller
+- (void)newTripViewControllerDidCancel:(NewEditTripViewController *)controller
 {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (void)newTripViewControllerDidDone:(NewTripViewController *)controller
+- (void)newTripViewControllerDidDone:(NewEditTripViewController *)controller
 {
     [self dismissViewControllerAnimated:YES completion:nil];
     
@@ -153,7 +163,7 @@ static NSString *knewTripSegue = @"newTrip";
             [self deleteTrip];
             break;
         case kEditButtonIndex:
-            NSLog(@"You have pressed the edit button");
+            [self editTrip];
         default:
             break;
     }
@@ -161,7 +171,7 @@ static NSString *knewTripSegue = @"newTrip";
 
 - (void)editTrip
 {
-    //TODO: edit selected trip
+    [self performSegueWithIdentifier:kEditTripSegue sender:self];
 }
 
 - (void)deleteTrip

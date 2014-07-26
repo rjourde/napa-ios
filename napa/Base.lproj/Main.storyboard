@@ -23,7 +23,7 @@
             </objects>
             <point key="canvasLocation" x="7" y="64"/>
         </scene>
-        <!--Trips View Controller - NAPA-->
+        <!--Trips View Controller - Napa-->
         <scene sceneID="c9e-Hw-WwT">
             <objects>
                 <collectionViewController autoresizesArchivedViewToFullSize="NO" id="jrn-0A-d2b" customClass="TripsViewController" sceneMemberID="viewController">
@@ -104,26 +104,29 @@
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="4CM-zj-oz8"/>
                         <barButtonItem systemItem="trash" id="JA7-C1-gsq"/>
                     </toolbarItems>
-                    <navigationItem key="navigationItem" title="NAPA" id="zNs-rW-iyB">
+                    <navigationItem key="navigationItem" title="Napa" id="zNs-rW-iyB">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="C3l-4q-hiP">
                             <connections>
                                 <segue destination="ADl-ye-mZR" kind="modal" identifier="newTrip" id="yNy-od-E0L"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="ADl-ye-mZR" kind="modal" identifier="editTrip" id="SJe-j2-al6"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dyE-rR-kab" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="419" y="66"/>
         </scene>
-        <!--New Trip View Controller - New Trip-->
+        <!--New Edit Trip View Controller - Edit Trip-->
         <scene sceneID="ZXS-sd-F8C">
             <objects>
-                <tableViewController id="VUX-2l-3wr" customClass="NewTripViewController" sceneMemberID="viewController">
+                <tableViewController id="VUX-2l-3wr" customClass="NewEditTripViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="LWu-iD-POS">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" red="0.94509803920000002" green="0.96078431369999995" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationWidth="10" reuseIdentifier="nameCell" id="w0T-Um-34w" customClass="TextFieldCell">
                                 <rect key="frame" x="0.0" y="55" width="320" height="44"/>
@@ -133,9 +136,9 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mK0-mC-OdI">
-                                            <rect key="frame" x="20" y="7" width="272" height="30"/>
+                                            <rect key="frame" x="20" y="8" width="272" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <textInputTraits key="textInputTraits"/>
                                             <connections>
                                                 <outlet property="delegate" destination="VUX-2l-3wr" id="rcK-VR-aqi"/>
@@ -222,7 +225,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         </prototypes>
                         <sections/>
                     </tableView>
-                    <navigationItem key="navigationItem" title="New Trip" id="s2K-iP-1r9">
+                    <navigationItem key="navigationItem" title="Edit Trip" id="s2K-iP-1r9">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="xof-96-07I">
                             <connections>
                                 <action selector="cancel:" destination="VUX-2l-3wr" id="Dtr-Nn-jMD"/>
@@ -283,6 +286,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ADl-ye-mZR" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="Nrj-8d-B7N"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="OLM-7v-MGl">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -305,4 +309,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="SJe-j2-al6"/>
+    </inferredMetricsTieBreakers>
 </document>

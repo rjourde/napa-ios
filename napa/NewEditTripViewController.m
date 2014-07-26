@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Remy Jourde. All rights reserved.
 //
 
-#import "NewTripViewController.h"
+#import "NewEditTripViewController.h"
 
 #import "Trip.h"
 #import "TextFieldCell.h"
@@ -28,12 +28,11 @@ static NSString *kNameCellID = @"nameCell";     // the cell containing the text 
 static NSString *kDateCellID = @"dateCell";     // the cells with the start or end date
 static NSString *kDatePickerID = @"datePicker"; // the cell containing the date picker
 
-UITextField *nameTextField; // textfield of the name cell
-
-@interface NewTripViewController ()
+@interface NewEditTripViewController ()
 
 @property (nonatomic, strong) NSArray *dataArray;
 @property (nonatomic, strong) NSDateFormatter *dateFormatter;
+@property (nonatomic, strong) UITextField *nameTextField; // textfield of the name cell
 
 // keep track which indexPath points to the cell with UIDatePicker
 @property (nonatomic, strong) NSIndexPath *datePickerIndexPath;
@@ -44,7 +43,7 @@ UITextField *nameTextField; // textfield of the name cell
 
 @end
 
-@implementation NewTripViewController
+@implementation NewEditTripViewController
 
 @synthesize delegate;
 
@@ -53,22 +52,42 @@ UITextField *nameTextField; // textfield of the name cell
     self = [super initWithStyle:style];
     if (self) {
         // Custom initialization
+        self.editModeON = NO;
     }
     return self;
+}
+
+- (void)InitializeDataSource
+{
+    Trip *trip = (Trip *)self.objectToEdit;
+    
+    NSMutableDictionary *itemOne;
+    NSMutableDictionary *itemTwo;
+    if (self.editModeON && trip)
+    {
+        itemOne = [@{ kTitleKey : @"Start Date", kDateKey : trip.startDate } mutableCopy];
+        itemTwo = [@{ kTitleKey : @"End Date", kDateKey : trip.endDate } mutableCopy];
+    }
+    else
+    {
+        itemOne = [@{ kTitleKey : @"Start Date", kDateKey : [NSDate date] } mutableCopy];
+        itemTwo = [@{ kTitleKey : @"End Date", kDateKey : [NSDate date] } mutableCopy];
+    }
+    
+    self.dataArray = @[itemOne, itemTwo];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    self.navigationItem.rightBarButtonItem.enabled = NO;
+    if (!self.editModeON)
+    {
+        self.navigationItem.title = @"New Trip";
+        self.navigationItem.rightBarButtonItem.enabled = NO;
+    }
     
-    // setup our data source
-    NSMutableDictionary *itemOne = [@{ kTitleKey : @"Start Date",
-                                       kDateKey : [NSDate date] } mutableCopy];
-    NSMutableDictionary *itemTwo = [@{ kTitleKey : @"End Date",
-                                         kDateKey : [NSDate date] } mutableCopy];
-    self.dataArray = @[itemOne, itemTwo];
+    [self InitializeDataSource];
     
     self.dateFormatter = [[NSDateFormatter alloc] init];
     [self.dateFormatter setDateStyle:NSDateFormatterMediumStyle];
@@ -97,7 +116,9 @@ UITextField *nameTextField; // textfield of the name cell
 
 - (void)viewDidAppear:(BOOL)animated
 {
-    [nameTextField becomeFirstResponder];
+    if (!self.editModeON) {
+        [self.nameTextField becomeFirstResponder];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -109,7 +130,7 @@ UITextField *nameTextField; // textfield of the name cell
 - (void)dismissKeyboard
 {
     [self.view removeGestureRecognizer:self.tap];
-    [nameTextField resignFirstResponder];
+    [self.nameTextField resignFirstResponder];
 }
 
 #pragma mark - Locale
@@ -227,7 +248,11 @@ UITextField *nameTextField; // textfield of the name cell
     if(indexPath.section == kNameSection)
     {
         TextFieldCell *textFieldCell = (TextFieldCell *)[tableView dequeueReusableCellWithIdentifier:kNameCellID];
-        nameTextField = textFieldCell.textField;
+        self.nameTextField = textFieldCell.textField;
+        if (self.editModeON && self.objectToEdit)
+        {
+            self.nameTextField.text = ((Trip *)self.objectToEdit).name;
+        }
         return textFieldCell;
     }
     // need to do this only for the date section
@@ -385,16 +410,7 @@ UITextField *nameTextField; // textfield of the name cell
     NSDate *endDate = [self.dataArray[1] valueForKey:kDateKey];
     
     // Before creating a new trip, check if the dates are valid
-    if([startDate isEarlierThanOrEqualTo:endDate])
-    {
-        [Trip insertTripWithName:nameTextField.text
-                       startDate:startDate
-                         endDate:endDate
-          inManagedObjectContext:self.managedObjectContext];
-        
-        [self.delegate newTripViewControllerDidDone:self];
-    }
-    else if([endDate isEarlierThan:startDate])
+    if([endDate isEarlierThan:startDate])
     {
         UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Trip cannot be saved"
                                                           message:@"Start date must be earlier than end date."
@@ -403,6 +419,26 @@ UITextField *nameTextField; // textfield of the name cell
                                                 otherButtonTitles:nil];
         
         [message show];
+    }
+    else
+    {
+        // Create new trip
+        if (!self.editModeON) {
+            [Trip insertTripWithName:self.nameTextField.text
+                           startDate:startDate
+                             endDate:endDate
+              inManagedObjectContext:self.managedObjectContext];
+        }
+        // Edit trip
+        else
+        {
+            Trip* trip = (Trip *)self.objectToEdit;
+            trip.name = self.nameTextField.text;
+            trip.startDate = startDate;
+            trip.endDate = endDate;
+        }
+        
+        [self.delegate newTripViewControllerDidDone:self];
     }
 }
 
@@ -465,7 +501,7 @@ UITextField *nameTextField; // textfield of the name cell
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-    [nameTextField resignFirstResponder];
+    [self.nameTextField resignFirstResponder];
     
     return YES;
 }

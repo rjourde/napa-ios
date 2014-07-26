@@ -14,7 +14,7 @@
 		1451C91D1983A7E1006610AE /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1451C91C1983A7E1006610AE /* Crashlytics.framework */; };
 		14952A6D1955E1B300B8D34A /* DateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 14952A6C1955E1B300B8D34A /* DateCell.m */; };
 		14B3D41E197F05EB00B01601 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 14B3D41D197F05EB00B01601 /* Podfile */; };
-		14F74C151932465D00BA28C7 /* NewTripViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F74C141932465D00BA28C7 /* NewTripViewController.m */; };
+		14F74C151932465D00BA28C7 /* NewEditTripViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F74C141932465D00BA28C7 /* NewEditTripViewController.m */; };
 		14F74C1B19324E5600BA28C7 /* NSDate+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F74C1A19324E5600BA28C7 /* NSDate+Additions.m */; };
 		14F74C1E19324FC900BA28C7 /* Trip.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F74C1D19324FC900BA28C7 /* Trip.m */; };
 		14FB15D51931F85000021E7F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14FB15D41931F85000021E7F /* Foundation.framework */; };
@@ -64,8 +64,8 @@
 		14952A6B1955E1B300B8D34A /* DateCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateCell.h; sourceTree = "<group>"; };
 		14952A6C1955E1B300B8D34A /* DateCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateCell.m; sourceTree = "<group>"; };
 		14B3D41D197F05EB00B01601 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
-		14F74C131932465D00BA28C7 /* NewTripViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewTripViewController.h; sourceTree = "<group>"; };
-		14F74C141932465D00BA28C7 /* NewTripViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewTripViewController.m; sourceTree = "<group>"; };
+		14F74C131932465D00BA28C7 /* NewEditTripViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewEditTripViewController.h; sourceTree = "<group>"; };
+		14F74C141932465D00BA28C7 /* NewEditTripViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewEditTripViewController.m; sourceTree = "<group>"; };
 		14F74C1919324E5600BA28C7 /* NSDate+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Additions.h"; sourceTree = "<group>"; };
 		14F74C1A19324E5600BA28C7 /* NSDate+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Additions.m"; sourceTree = "<group>"; };
 		14F74C1C19324FC900BA28C7 /* Trip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Trip.h; sourceTree = "<group>"; };
@@ -215,8 +215,8 @@
 				14FB15F21931F85000021E7F /* DetailViewController.m */,
 				14FB16121931FCDD00021E7F /* TripViewCell.h */,
 				14FB16131931FCDD00021E7F /* TripViewCell.m */,
-				14F74C131932465D00BA28C7 /* NewTripViewController.h */,
-				14F74C141932465D00BA28C7 /* NewTripViewController.m */,
+				14F74C131932465D00BA28C7 /* NewEditTripViewController.h */,
+				14F74C141932465D00BA28C7 /* NewEditTripViewController.m */,
 				14F74C1C19324FC900BA28C7 /* Trip.h */,
 				14F74C1D19324FC900BA28C7 /* Trip.m */,
 				14F74C1919324E5600BA28C7 /* NSDate+Additions.h */,
@@ -395,7 +395,7 @@
 				14314914197BEFAD00284327 /* StartDateView.m in Sources */,
 				14952A6D1955E1B300B8D34A /* DateCell.m in Sources */,
 				14FB16141931FCDD00021E7F /* TripViewCell.m in Sources */,
-				14F74C151932465D00BA28C7 /* NewTripViewController.m in Sources */,
+				14F74C151932465D00BA28C7 /* NewEditTripViewController.m in Sources */,
 				14F74C1E19324FC900BA28C7 /* Trip.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
