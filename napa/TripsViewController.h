@@ -12,7 +12,7 @@
 
 @class TripsViewControllerDataSource;
 
-@interface TripsViewController : UICollectionViewController
+@interface TripsViewController : UICollectionViewController <UIGestureRecognizerDelegate, UIActionSheetDelegate>
 
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 

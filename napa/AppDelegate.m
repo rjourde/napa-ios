@@ -11,6 +11,8 @@
 #import "TripsViewController.h"
 #import "PersistentStack.h"
 
+#import <Crashlytics/Crashlytics.h>
+
 @interface AppDelegate ()
 
 @property (nonatomic, strong) PersistentStack* persistentStack;
@@ -26,6 +28,9 @@
     TripsViewController *controller = (TripsViewController *)navigationController.topViewController;
     self.persistentStack = [[PersistentStack alloc] init];
     controller.managedObjectContext = self.persistentStack.managedObjectContext;
+    
+    [Crashlytics startWithAPIKey:@"4085d67bba35160ce0438f0ad3b251a9eee8334d"];
+    
     return YES;
 }
 

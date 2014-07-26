@@ -212,4 +212,9 @@ NSMutableArray *_sectionChanges;
     return path ? [self.fetchedResultsController objectAtIndexPath:path] : nil;
 }
 
+- (id)itemAtIndexPath:(NSIndexPath *)indexPath
+{
+    return indexPath ? [self.fetchedResultsController objectAtIndexPath:indexPath] : nil;
+}
+
 @end

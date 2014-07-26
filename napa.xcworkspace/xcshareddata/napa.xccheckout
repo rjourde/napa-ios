@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>3A582E52-ED91-419E-820F-7DD71E921E89</string>
+	<key>IDESourceControlProjectName</key>
+	<string>napa</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>6EC655A9-626E-4538-A08B-208C01DD26BE</key>
+		<string>https://github.com/rjourde/napa-ios.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>napa.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>6EC655A9-626E-4538-A08B-208C01DD26BE</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/rjourde/napa-ios.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>6EC655A9-626E-4538-A08B-208C01DD26BE</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>6EC655A9-626E-4538-A08B-208C01DD26BE</string>
+			<key>IDESourceControlWCCName</key>
+			<string>napa-ios</string>
+		</dict>
+	</array>
+</dict>
+</plist>

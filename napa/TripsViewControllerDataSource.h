@@ -26,5 +26,6 @@
 
 - (id)initWithCollectionView:(UICollectionView*)collectionView;
 - (id)selectedItem;
+- (id)itemAtIndexPath:(NSIndexPath *)indexPath;
 
 @end

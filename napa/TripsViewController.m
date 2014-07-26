@@ -16,9 +16,19 @@
 static NSString *kShowTripSegue = @"showTrip";
 static NSString *knewTripSegue = @"newTrip";
 
+#define kDeleteButtonIndex      0
+#define kEditButtonIndex        1
+#define kCancelButtonIndex      2
+
 @interface TripsViewController () <TripsViewControllerDataSourceDelegate, NewTripViewControllerDelegate>
 
 @property (nonatomic, strong) TripsViewControllerDataSource* tripsViewControllerDataSource;
+
+// keep track of the selected collection view cell
+@property (nonatomic, strong) NSIndexPath *selectedIndexPath;
+
+- (void)editTrip;
+- (void)deleteTrip;
 
 @end
 
@@ -33,8 +43,39 @@ static NSString *knewTripSegue = @"newTrip";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [self.navigationController setToolbarHidden:YES animated:NO];
 	
     [self setupFetchedResultsController];
+    
+    // attach long press gesture to collectionView
+    UILongPressGestureRecognizer *lpgr = [[UILongPressGestureRecognizer alloc]
+                                          initWithTarget:self action:@selector(handleLongPress:)];
+    lpgr.minimumPressDuration = .5; //seconds
+    lpgr.delegate = self;
+    [self.collectionView addGestureRecognizer:lpgr];
+}
+
+- (void)handleLongPress:(UILongPressGestureRecognizer *)gestureRecognizer
+{
+    if (gestureRecognizer.state == UIGestureRecognizerStateBegan)
+    {
+        CGPoint point = [gestureRecognizer locationInView:self.collectionView];
+        
+        self.selectedIndexPath = [self.collectionView indexPathForItemAtPoint:point];
+        if (self.selectedIndexPath == nil)
+        {
+            NSLog(@"couldn't find index path");
+        }
+        else
+        {
+            UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self
+                                                            cancelButtonTitle:@"Cancel"
+                                                       destructiveButtonTitle:@"Delete Trip"
+                                                            otherButtonTitles:@"Edit Trip", nil];
+            [actionSheet showInView:self.view];
+        }
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -50,7 +91,7 @@ static NSString *knewTripSegue = @"newTrip";
     self.tripsViewControllerDataSource.delegate = self;
 }
 
-#pragma mark Fetched Results Controller Delegate
+#pragma mark - Fetched Results Controller Delegate
 
 - (void)configureCell:(id)theCell withObject:(id)object
 {
@@ -100,7 +141,33 @@ static NSString *knewTripSegue = @"newTrip";
 {
     [self dismissViewControllerAnimated:YES completion:nil];
     
-    // push newly created trip
+    //TODO: push newly created trip
+}
+
+#pragma mark - UIActionSheet deletegate
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    switch (buttonIndex) {
+        case kDeleteButtonIndex:
+            [self deleteTrip];
+            break;
+        case kEditButtonIndex:
+            NSLog(@"You have pressed the edit button");
+        default:
+            break;
+    }
+}
+
+- (void)editTrip
+{
+    //TODO: edit selected trip
+}
+
+- (void)deleteTrip
+{
+	NSManagedObject *object = [self.tripsViewControllerDataSource itemAtIndexPath:self.selectedIndexPath];
+    [self.managedObjectContext deleteObject:object];
 }
 
 @end

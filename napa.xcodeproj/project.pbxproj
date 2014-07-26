@@ -11,7 +11,9 @@
 		1428B4A2196077C800AD2187 /* PersistentStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 1428B4A1196077C800AD2187 /* PersistentStack.m */; };
 		1428B4A519607C1200AD2187 /* TripsViewControllerDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 1428B4A419607C1200AD2187 /* TripsViewControllerDataSource.m */; };
 		14314914197BEFAD00284327 /* StartDateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14314913197BEFAD00284327 /* StartDateView.m */; };
+		1451C91D1983A7E1006610AE /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1451C91C1983A7E1006610AE /* Crashlytics.framework */; };
 		14952A6D1955E1B300B8D34A /* DateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 14952A6C1955E1B300B8D34A /* DateCell.m */; };
+		14B3D41E197F05EB00B01601 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 14B3D41D197F05EB00B01601 /* Podfile */; };
 		14F74C151932465D00BA28C7 /* NewTripViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F74C141932465D00BA28C7 /* NewTripViewController.m */; };
 		14F74C1B19324E5600BA28C7 /* NSDate+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F74C1A19324E5600BA28C7 /* NSDate+Additions.m */; };
 		14F74C1E19324FC900BA28C7 /* Trip.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F74C1D19324FC900BA28C7 /* Trip.m */; };
@@ -35,6 +37,7 @@
 		14FB16091931F85000021E7F /* napaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FB16081931F85000021E7F /* napaTests.m */; };
 		14FB16141931FCDD00021E7F /* TripViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FB16131931FCDD00021E7F /* TripViewCell.m */; };
 		14FDF36819601C4C0076021A /* .travis.yml in Resources */ = {isa = PBXBuildFile; fileRef = 14FDF36719601C4C0076021A /* .travis.yml */; };
+		6A2C3B216FEC4FBF87C8C4C3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8222A065D0CA41A29349AD7D /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +51,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		093A0DEFA34E475582DBD702 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		1416A059194DFFA900E0D89F /* TextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldCell.h; sourceTree = "<group>"; };
 		1416A05A194DFFA900E0D89F /* TextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextFieldCell.m; sourceTree = "<group>"; };
 		1428B4A0196077C800AD2187 /* PersistentStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersistentStack.h; sourceTree = "<group>"; };
@@ -56,8 +60,10 @@
 		1428B4A419607C1200AD2187 /* TripsViewControllerDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TripsViewControllerDataSource.m; sourceTree = "<group>"; };
 		14314912197BEFAD00284327 /* StartDateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartDateView.h; sourceTree = "<group>"; };
 		14314913197BEFAD00284327 /* StartDateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartDateView.m; sourceTree = "<group>"; };
+		1451C91C1983A7E1006610AE /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		14952A6B1955E1B300B8D34A /* DateCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateCell.h; sourceTree = "<group>"; };
 		14952A6C1955E1B300B8D34A /* DateCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateCell.m; sourceTree = "<group>"; };
+		14B3D41D197F05EB00B01601 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		14F74C131932465D00BA28C7 /* NewTripViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewTripViewController.h; sourceTree = "<group>"; };
 		14F74C141932465D00BA28C7 /* NewTripViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewTripViewController.m; sourceTree = "<group>"; };
 		14F74C1919324E5600BA28C7 /* NSDate+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Additions.h"; sourceTree = "<group>"; };
@@ -90,6 +96,7 @@
 		14FB16121931FCDD00021E7F /* TripViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TripViewCell.h; sourceTree = "<group>"; };
 		14FB16131931FCDD00021E7F /* TripViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TripViewCell.m; sourceTree = "<group>"; };
 		14FDF36719601C4C0076021A /* .travis.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .travis.yml; sourceTree = SOURCE_ROOT; };
+		8222A065D0CA41A29349AD7D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +108,8 @@
 				14FB15DB1931F85000021E7F /* CoreData.framework in Frameworks */,
 				14FB15D91931F85000021E7F /* UIKit.framework in Frameworks */,
 				14FB15D51931F85000021E7F /* Foundation.framework in Frameworks */,
+				1451C91D1983A7E1006610AE /* Crashlytics.framework in Frameworks */,
+				6A2C3B216FEC4FBF87C8C4C3 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,11 +130,13 @@
 		14FB15C81931F85000021E7F = {
 			isa = PBXGroup;
 			children = (
+				14B3D41D197F05EB00B01601 /* Podfile */,
 				14FDF36719601C4C0076021A /* .travis.yml */,
 				14FB15DC1931F85000021E7F /* napa */,
 				14FB16021931F85000021E7F /* napaTests */,
 				14FB15D31931F85000021E7F /* Frameworks */,
 				14FB15D21931F85000021E7F /* Products */,
+				093A0DEFA34E475582DBD702 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -141,11 +152,13 @@
 		14FB15D31931F85000021E7F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1451C91C1983A7E1006610AE /* Crashlytics.framework */,
 				14FB15D41931F85000021E7F /* Foundation.framework */,
 				14FB15D61931F85000021E7F /* CoreGraphics.framework */,
 				14FB15D81931F85000021E7F /* UIKit.framework */,
 				14FB15DA1931F85000021E7F /* CoreData.framework */,
 				14FB15FB1931F85000021E7F /* XCTest.framework */,
+				8222A065D0CA41A29349AD7D /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -229,9 +242,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 14FB160C1931F85000021E7F /* Build configuration list for PBXNativeTarget "napa" */;
 			buildPhases = (
+				4FC58F0E2B3B4F68AF45BD72 /* Check Pods Manifest.lock */,
 				14FB15CD1931F85000021E7F /* Sources */,
 				14FB15CE1931F85000021E7F /* Frameworks */,
 				14FB15CF1931F85000021E7F /* Resources */,
+				4AA3BC1A14C34A66B77F268D /* Copy Pods Resources */,
+				1451C91B1983A78F006610AE /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -298,6 +314,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14B3D41E197F05EB00B01601 /* Podfile in Resources */,
 				14FB15F51931F85000021E7F /* Images.xcassets in Resources */,
 				14FB15E11931F85000021E7F /* InfoPlist.strings in Resources */,
 				14FDF36819601C4C0076021A /* .travis.yml in Resources */,
@@ -314,6 +331,52 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1451C91B1983A78F006610AE /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Crashlytics.framework/run 4085d67bba35160ce0438f0ad3b251a9eee8334d fd341f20e4ac938687d300b9c06c6c2d19e2fdd0abd4eba33fb42a133a178ce1";
+		};
+		4AA3BC1A14C34A66B77F268D /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4FC58F0E2B3B4F68AF45BD72 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		14FB15CD1931F85000021E7F /* Sources */ = {
@@ -455,9 +518,14 @@
 		};
 		14FB160D1931F85000021E7F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 093A0DEFA34E475582DBD702 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "napa/napa-Prefix.pch";
 				INFOPLIST_FILE = "napa/napa-Info.plist";
@@ -468,9 +536,14 @@
 		};
 		14FB160E1931F85000021E7F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 093A0DEFA34E475582DBD702 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "napa/napa-Prefix.pch";
 				INFOPLIST_FILE = "napa/napa-Info.plist";
