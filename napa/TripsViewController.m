@@ -100,7 +100,15 @@ static NSString *kEditTripSegue = @"editTrip";
     Trip* trip = object;
     cell.nameLabel.text = trip.name;
     
-    cell.daysLabel.text = [NSString stringWithFormat:@"%ld days", [trip.startDate numberOfDaysUntilDay:trip.endDate]];
+    NSInteger days = [trip.startDate numberOfDaysUntilDay:trip.endDate];
+    
+    if (days <= 1) {
+        cell.daysLabel.text = [NSString stringWithFormat:@"1 day"];
+    }
+    else
+    {
+        cell.daysLabel.text = [NSString stringWithFormat:@"%ld days", days];
+    }
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"dd"];

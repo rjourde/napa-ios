@@ -14,16 +14,6 @@ const NSInteger secondPerMunite = 60;
 const NSInteger munitePerHour = 60;
 const NSInteger hourPerDay = 24;
 
-- (BOOL)isLaterThanOrEqualTo:(NSDate*)date
-{
-    return !([self compare:date] == NSOrderedAscending);
-}
-
-- (BOOL)isEarlierThanOrEqualTo:(NSDate*)date
-{
-    return !([self compare:date] == NSOrderedDescending);
-}
-
 - (BOOL)isLaterThan:(NSDate*)date
 {
     return ([self compare:date] == NSOrderedDescending);
@@ -37,16 +27,9 @@ const NSInteger hourPerDay = 24;
 
 - (NSInteger)numberOfDaysUntilDay:(NSDate *)date
 {
-    NSCalendar *gregorian = [[NSCalendar alloc]
-                             initWithCalendarIdentifier:NSGregorianCalendar];
+    NSTimeInterval interval = [date timeIntervalSinceDate: self];
     
-    NSUInteger unitFlags = NSMonthCalendarUnit | NSDayCalendarUnit;
-    
-    NSDateComponents *components = [gregorian components:unitFlags
-                                                fromDate:self
-                                                  toDate:date options:0];
-    
-    return [components day];
+    return interval/(60*60*24);
 }
 
 @end

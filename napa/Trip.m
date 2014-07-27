@@ -39,7 +39,7 @@
     // Set the batch size to a suitable number.
     request.fetchBatchSize= 20;
     // Edit the sort key as appropriate.
-    request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"startDate" ascending:NO]];
+    request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"startDate" ascending:YES]];
     return [[NSFetchedResultsController alloc] initWithFetchRequest:request
                                                managedObjectContext:managedObjectContext
                                                  sectionNameKeyPath:nil

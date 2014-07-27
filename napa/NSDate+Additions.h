@@ -8,9 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSDate (Additions)
-- (BOOL)isLaterThanOrEqualTo:(NSDate*)date;
-- (BOOL)isEarlierThanOrEqualTo:(NSDate*)date;
+@interface NSDate (Additions);
 - (BOOL)isLaterThan:(NSDate*)date;
 - (BOOL)isEarlierThan:(NSDate*)date;
 - (NSInteger)numberOfDaysUntilDay:(NSDate *)date;
