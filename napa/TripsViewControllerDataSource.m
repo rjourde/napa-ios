@@ -45,7 +45,13 @@ NSMutableArray *_sectionChanges;
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     id object = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    id cell = [collectionView dequeueReusableCellWithReuseIdentifier:kTripViewCellIdentifier forIndexPath:indexPath];
+    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kTripViewCellIdentifier
+                                                                           forIndexPath:indexPath];
+    UIView *highlightedView = [[UIView alloc] initWithFrame:cell.frame];
+    highlightedView.backgroundColor = [UIColor colorWithRed:0.0/255.0 green:224.0/255.0 blue:99.0/255.0 alpha:0.1];
+    cell.selectedBackgroundView = highlightedView;
+    [cell bringSubviewToFront:cell.selectedBackgroundView];
+    
     [self.delegate configureCell:cell withObject:object];
     return cell;
 }
