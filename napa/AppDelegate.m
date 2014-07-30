@@ -29,6 +29,8 @@
     self.persistentStack = [[PersistentStack alloc] init];
     controller.managedObjectContext = self.persistentStack.managedObjectContext;
     
+    application.applicationSupportsShakeToEdit = YES;
+    
     [Crashlytics startWithAPIKey:@"4085d67bba35160ce0438f0ad3b251a9eee8334d"];
     
     return YES;

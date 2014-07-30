@@ -13,9 +13,9 @@
 #import "Trip.h"
 #import "TripViewCell.h"
 
-static NSString *kShowTripSegue = @"showTrip";
-static NSString *kNewTripSegue = @"newTrip";
-static NSString *kEditTripSegue = @"editTrip";
+static NSString *kShowTripSegue     = @"showTrip";
+static NSString *kNewTripSegue      = @"newTrip";
+static NSString *kEditTripSegue     = @"editTrip";
 
 #define kDeleteButtonIndex      0
 #define kEditButtonIndex        1
@@ -184,8 +184,22 @@ static NSString *kEditTripSegue = @"editTrip";
 
 - (void)deleteTrip
 {
-	NSManagedObject *object = [self.tripsViewControllerDataSource itemAtIndexPath:self.selectedIndexPath];
-    [self.managedObjectContext deleteObject:object];
+	Trip *trip = [self.tripsViewControllerDataSource itemAtIndexPath:self.selectedIndexPath];
+    NSString* actionName = [NSString stringWithFormat:@"%@ trip deletion", trip.name];
+    [self.undoManager setActionName:actionName];
+    [self.managedObjectContext deleteObject:trip];
+}
+
+#pragma mark - Undo
+
+- (BOOL)canBecomeFirstResponder
+{
+    return YES;
+}
+
+- (NSUndoManager*)undoManager
+{
+    return self.managedObjectContext.undoManager;
 }
 
 @end
