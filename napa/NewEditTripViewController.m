@@ -8,7 +8,7 @@
 
 #import "NewEditTripViewController.h"
 
-#import "Trip.h"
+#import "DetailViewController.h"
 #import "TextFieldCell.h"
 
 #define kPickerAnimationDuration    0.40   // duration for the animation to slide the date picker into view
@@ -422,23 +422,24 @@ static NSString *kDatePickerID = @"datePicker"; // the cell containing the date 
     }
     else
     {
+        Trip* trip;
         // Create new trip
         if (!self.editModeON) {
-            [Trip insertTripWithName:self.nameTextField.text
-                           startDate:startDate
-                             endDate:endDate
-              inManagedObjectContext:self.managedObjectContext];
+            trip = [Trip insertTripWithName:self.nameTextField.text
+                                  startDate:startDate
+                                    endDate:endDate
+                     inManagedObjectContext:self.managedObjectContext];
         }
         // Edit trip
         else
         {
-            Trip* trip = (Trip *)self.objectToEdit;
+            trip = (Trip *)self.objectToEdit;
             trip.name = self.nameTextField.text;
             trip.startDate = startDate;
             trip.endDate = endDate;
         }
         
-        [self.delegate newTripViewControllerDidDone:self];
+        [self.delegate newTripViewController:self didDoneWithTrip:trip];
     }
 }
 

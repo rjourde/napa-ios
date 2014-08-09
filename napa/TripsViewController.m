@@ -9,6 +9,7 @@
 #import "TripsViewController.h"
 
 #import "TripsViewControllerDataSource.h"
+#import "NewEditTripViewController.h"
 #import "DetailViewController.h"
 #import "Trip.h"
 #import "TripViewCell.h"
@@ -28,6 +29,8 @@ static NSString *kEditTripSegue     = @"editTrip";
 // keep track of the selected collection view cell
 @property (nonatomic, strong) NSIndexPath *selectedIndexPath;
 
+@property (nonatomic, strong) Trip *currentTrip;
+
 - (void)editTrip;
 - (void)deleteTrip;
 
@@ -45,16 +48,19 @@ static NSString *kEditTripSegue     = @"editTrip";
 {
     [super viewDidLoad];
     
-    [self.navigationController setToolbarHidden:YES animated:NO];
-	
-    [self setupFetchedResultsController];
-    
     // attach long press gesture to collectionView
     UILongPressGestureRecognizer *lpgr = [[UILongPressGestureRecognizer alloc]
                                           initWithTarget:self action:@selector(handleLongPress:)];
     lpgr.minimumPressDuration = .5; //seconds
     lpgr.delegate = self;
     [self.collectionView addGestureRecognizer:lpgr];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    [self setupFetchedResultsController];
 }
 
 - (void)handleLongPress:(UILongPressGestureRecognizer *)gestureRecognizer
@@ -121,8 +127,17 @@ static NSString *kEditTripSegue     = @"editTrip";
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     [super prepareForSegue:segue sender:sender];
-    if ([[segue identifier] isEqualToString:kShowTripSegue]) {
-        [self presentTripViewController:segue.destinationViewController];
+    if ([segue.identifier isEqualToString:kShowTripSegue])
+    {
+        if (!self.currentTrip)
+        {
+            [self presentTripViewController:segue.destinationViewController];
+        }
+        else
+        {
+            [(DetailViewController*)segue.destinationViewController setDetailItem:self.currentTrip];
+            self.currentTrip = nil;
+        }
     }
     if ([segue.identifier isEqualToString:kNewTripSegue])
     {
@@ -155,11 +170,12 @@ static NSString *kEditTripSegue     = @"editTrip";
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (void)newTripViewControllerDidDone:(NewEditTripViewController *)controller
+- (void)newTripViewController:(NewEditTripViewController *)controller didDoneWithTrip:(Trip*) trip
 {
     [self dismissViewControllerAnimated:YES completion:nil];
     
-    //TODO: push newly created trip
+    self.currentTrip = trip;
+    [self performSegueWithIdentifier:kShowTripSegue sender:self];
 }
 
 #pragma mark - UIActionSheet deletegate

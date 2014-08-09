@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-#import "NewEditTripViewController.h"
-
 @class TripsViewControllerDataSource;
 
 @interface TripsViewController : UICollectionViewController <UIGestureRecognizerDelegate, UIActionSheetDelegate>

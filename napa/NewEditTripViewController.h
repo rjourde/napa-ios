@@ -8,11 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+#import "Trip.h"
+
 @class NewEditTripViewController;
 
 @protocol NewEditTripViewControllerDelegate <NSObject>
 - (void)newTripViewControllerDidCancel:(NewEditTripViewController *)controller;
-- (void)newTripViewControllerDidDone:(NewEditTripViewController *)controller;
+- (void)newTripViewController:(NewEditTripViewController *)controller didDoneWithTrip:(Trip *)trip;
 @end
 
 @interface NewEditTripViewController : UITableViewController
