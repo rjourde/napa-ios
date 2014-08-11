@@ -10,7 +10,7 @@
 
 #import "TripsViewControllerDataSource.h"
 #import "NewEditTripViewController.h"
-#import "DetailViewController.h"
+#import "TripViewController.h"
 #import "Trip.h"
 #import "TripViewCell.h"
 
@@ -135,7 +135,7 @@ static NSString *kEditTripSegue     = @"editTrip";
         }
         else
         {
-            [(DetailViewController*)segue.destinationViewController setDetailItem:self.currentTrip];
+            [(TripViewController*)segue.destinationViewController setTrip:self.currentTrip];
             self.currentTrip = nil;
         }
     }
@@ -157,10 +157,10 @@ static NSString *kEditTripSegue     = @"editTrip";
     }
 }
 
-- (void)presentTripViewController:(DetailViewController*)tripViewController
+- (void)presentTripViewController:(TripViewController*)tripViewController
 {
-    NSManagedObject *object = [self.tripsViewControllerDataSource selectedItem];
-    [tripViewController setDetailItem:object];
+    Trip *trip = (Trip*)[self.tripsViewControllerDataSource selectedItem];
+    [tripViewController setTrip:trip];
 }
 
 #pragma mark - NewTripViewController delegate

@@ -12,6 +12,7 @@
 		1428B4A519607C1200AD2187 /* TripsViewControllerDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 1428B4A419607C1200AD2187 /* TripsViewControllerDataSource.m */; };
 		14314914197BEFAD00284327 /* StartDateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14314913197BEFAD00284327 /* StartDateView.m */; };
 		1451C91D1983A7E1006610AE /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1451C91C1983A7E1006610AE /* Crashlytics.framework */; };
+		1470F25A1998F2F700A00301 /* TripViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1470F2591998F2F700A00301 /* TripViewController.m */; };
 		14952A6D1955E1B300B8D34A /* DateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 14952A6C1955E1B300B8D34A /* DateCell.m */; };
 		14B3D41E197F05EB00B01601 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 14B3D41D197F05EB00B01601 /* Podfile */; };
 		14F74C151932465D00BA28C7 /* NewEditTripViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F74C141932465D00BA28C7 /* NewEditTripViewController.m */; };
@@ -27,7 +28,6 @@
 		14FB15EA1931F85000021E7F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14FB15E81931F85000021E7F /* Main.storyboard */; };
 		14FB15ED1931F85000021E7F /* napa.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 14FB15EB1931F85000021E7F /* napa.xcdatamodeld */; };
 		14FB15F01931F85000021E7F /* TripsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FB15EF1931F85000021E7F /* TripsViewController.m */; };
-		14FB15F31931F85000021E7F /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FB15F21931F85000021E7F /* DetailViewController.m */; };
 		14FB15F51931F85000021E7F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14FB15F41931F85000021E7F /* Images.xcassets */; };
 		14FB15FC1931F85000021E7F /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14FB15FB1931F85000021E7F /* XCTest.framework */; };
 		14FB15FD1931F85000021E7F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14FB15D41931F85000021E7F /* Foundation.framework */; };
@@ -61,6 +61,8 @@
 		14314912197BEFAD00284327 /* StartDateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartDateView.h; sourceTree = "<group>"; };
 		14314913197BEFAD00284327 /* StartDateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartDateView.m; sourceTree = "<group>"; };
 		1451C91C1983A7E1006610AE /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		1470F2581998F2F700A00301 /* TripViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TripViewController.h; sourceTree = "<group>"; };
+		1470F2591998F2F700A00301 /* TripViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TripViewController.m; sourceTree = "<group>"; };
 		14952A6B1955E1B300B8D34A /* DateCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateCell.h; sourceTree = "<group>"; };
 		14952A6C1955E1B300B8D34A /* DateCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateCell.m; sourceTree = "<group>"; };
 		14B3D41D197F05EB00B01601 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
@@ -85,8 +87,6 @@
 		14FB15EC1931F85000021E7F /* napa.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = napa.xcdatamodel; sourceTree = "<group>"; };
 		14FB15EE1931F85000021E7F /* TripsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TripsViewController.h; sourceTree = "<group>"; };
 		14FB15EF1931F85000021E7F /* TripsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TripsViewController.m; sourceTree = "<group>"; };
-		14FB15F11931F85000021E7F /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		14FB15F21931F85000021E7F /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		14FB15F41931F85000021E7F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		14FB15FA1931F85000021E7F /* napaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = napaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		14FB15FB1931F85000021E7F /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -127,6 +127,56 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1470F25B1998F75900A00301 /* New - Edit Trip */ = {
+			isa = PBXGroup;
+			children = (
+				1416A059194DFFA900E0D89F /* TextFieldCell.h */,
+				1416A05A194DFFA900E0D89F /* TextFieldCell.m */,
+				14F74C1919324E5600BA28C7 /* NSDate+Additions.h */,
+				14F74C1A19324E5600BA28C7 /* NSDate+Additions.m */,
+				14F74C131932465D00BA28C7 /* NewEditTripViewController.h */,
+				14F74C141932465D00BA28C7 /* NewEditTripViewController.m */,
+			);
+			name = "New - Edit Trip";
+			sourceTree = "<group>";
+		};
+		1470F25C1998F77C00A00301 /* Trip */ = {
+			isa = PBXGroup;
+			children = (
+				1470F2581998F2F700A00301 /* TripViewController.h */,
+				1470F2591998F2F700A00301 /* TripViewController.m */,
+			);
+			name = Trip;
+			sourceTree = "<group>";
+		};
+		1470F25D1998F78300A00301 /* Trips */ = {
+			isa = PBXGroup;
+			children = (
+				14952A6B1955E1B300B8D34A /* DateCell.h */,
+				14952A6C1955E1B300B8D34A /* DateCell.m */,
+				14FB15EE1931F85000021E7F /* TripsViewController.h */,
+				14FB15EF1931F85000021E7F /* TripsViewController.m */,
+				14FB16121931FCDD00021E7F /* TripViewCell.h */,
+				14FB16131931FCDD00021E7F /* TripViewCell.m */,
+				1428B4A319607C1200AD2187 /* TripsViewControllerDataSource.h */,
+				1428B4A419607C1200AD2187 /* TripsViewControllerDataSource.m */,
+				14314912197BEFAD00284327 /* StartDateView.h */,
+				14314913197BEFAD00284327 /* StartDateView.m */,
+			);
+			name = Trips;
+			sourceTree = "<group>";
+		};
+		1470F25E1998F7E300A00301 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				14F74C1C19324FC900BA28C7 /* Trip.h */,
+				14F74C1D19324FC900BA28C7 /* Trip.m */,
+				1428B4A0196077C800AD2187 /* PersistentStack.h */,
+				1428B4A1196077C800AD2187 /* PersistentStack.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		14FB15C81931F85000021E7F = {
 			isa = PBXGroup;
 			children = (
@@ -207,30 +257,12 @@
 		14FB16151931FD0E00021E7F /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				1470F25E1998F7E300A00301 /* Model */,
+				1470F25D1998F78300A00301 /* Trips */,
+				1470F25C1998F77C00A00301 /* Trip */,
+				1470F25B1998F75900A00301 /* New - Edit Trip */,
 				14FB15E51931F85000021E7F /* AppDelegate.h */,
 				14FB15E61931F85000021E7F /* AppDelegate.m */,
-				14FB15EE1931F85000021E7F /* TripsViewController.h */,
-				14FB15EF1931F85000021E7F /* TripsViewController.m */,
-				14FB15F11931F85000021E7F /* DetailViewController.h */,
-				14FB15F21931F85000021E7F /* DetailViewController.m */,
-				14FB16121931FCDD00021E7F /* TripViewCell.h */,
-				14FB16131931FCDD00021E7F /* TripViewCell.m */,
-				14F74C131932465D00BA28C7 /* NewEditTripViewController.h */,
-				14F74C141932465D00BA28C7 /* NewEditTripViewController.m */,
-				14F74C1C19324FC900BA28C7 /* Trip.h */,
-				14F74C1D19324FC900BA28C7 /* Trip.m */,
-				14F74C1919324E5600BA28C7 /* NSDate+Additions.h */,
-				14F74C1A19324E5600BA28C7 /* NSDate+Additions.m */,
-				1416A059194DFFA900E0D89F /* TextFieldCell.h */,
-				1416A05A194DFFA900E0D89F /* TextFieldCell.m */,
-				14952A6B1955E1B300B8D34A /* DateCell.h */,
-				14952A6C1955E1B300B8D34A /* DateCell.m */,
-				1428B4A0196077C800AD2187 /* PersistentStack.h */,
-				1428B4A1196077C800AD2187 /* PersistentStack.m */,
-				1428B4A319607C1200AD2187 /* TripsViewControllerDataSource.h */,
-				1428B4A419607C1200AD2187 /* TripsViewControllerDataSource.m */,
-				14314912197BEFAD00284327 /* StartDateView.h */,
-				14314913197BEFAD00284327 /* StartDateView.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -384,7 +416,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				14F74C1B19324E5600BA28C7 /* NSDate+Additions.m in Sources */,
-				14FB15F31931F85000021E7F /* DetailViewController.m in Sources */,
 				14FB15F01931F85000021E7F /* TripsViewController.m in Sources */,
 				1428B4A2196077C800AD2187 /* PersistentStack.m in Sources */,
 				1428B4A519607C1200AD2187 /* TripsViewControllerDataSource.m in Sources */,
@@ -395,6 +426,7 @@
 				14314914197BEFAD00284327 /* StartDateView.m in Sources */,
 				14952A6D1955E1B300B8D34A /* DateCell.m in Sources */,
 				14FB16141931FCDD00021E7F /* TripViewCell.m in Sources */,
+				1470F25A1998F2F700A00301 /* TripViewController.m in Sources */,
 				14F74C151932465D00BA28C7 /* NewEditTripViewController.m in Sources */,
 				14F74C1E19324FC900BA28C7 /* Trip.m in Sources */,
 			);

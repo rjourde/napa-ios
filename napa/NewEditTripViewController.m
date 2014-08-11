@@ -8,7 +8,7 @@
 
 #import "NewEditTripViewController.h"
 
-#import "DetailViewController.h"
+#import "TripViewController.h"
 #import "TextFieldCell.h"
 
 #define kPickerAnimationDuration    0.40   // duration for the animation to slide the date picker into view
