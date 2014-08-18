@@ -8,6 +8,8 @@
 
 #import "TripsViewControllerDataSource.h"
 
+#import "TripCollectionHeaderView.h"
+
 static NSString *kTripViewCellIdentifier = @"TripCell";
 
 @interface TripsViewControllerDataSource ()
@@ -36,6 +38,11 @@ NSMutableArray *_sectionChanges;
 
 #pragma mark - Collection View
 
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
+{
+    return [[self.fetchedResultsController sections] count];
+}
+
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
     id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController sections][section];
@@ -54,6 +61,24 @@ NSMutableArray *_sectionChanges;
     
     [self.delegate configureCell:cell withObject:object];
     return cell;
+}
+
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
+{
+    UICollectionReusableView *reusableview = nil;
+    
+    if (kind == UICollectionElementKindSectionHeader)
+    {
+        TripCollectionHeaderView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"HeaderView" forIndexPath:indexPath];
+        
+        id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController sections][indexPath.section];
+        
+        headerView.title.text = [sectionInfo name];
+        
+        reusableview = headerView;
+    }
+    
+    return reusableview;
 }
 
 #pragma mark - Fetched results controller

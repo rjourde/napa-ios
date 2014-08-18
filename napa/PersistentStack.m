@@ -10,9 +10,9 @@
 
 @interface PersistentStack ()
 
-@property (nonatomic,strong,readwrite) NSManagedObjectContext* managedObjectContext;
-@property (nonatomic,strong,readwrite) NSManagedObjectModel *managedObjectModel;
-@property (nonatomic,strong,readwrite) NSPersistentStoreCoordinator *persistentStoreCoordinator;
+@property (nonatomic, strong, readwrite) NSManagedObjectContext* managedObjectContext;
+@property (nonatomic, strong, readwrite) NSManagedObjectModel *managedObjectModel;
+@property (nonatomic, strong, readwrite) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 
 @end
 
@@ -72,7 +72,7 @@
         return _persistentStoreCoordinator;
     }
     
-    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"napa_1.3.sqlite"];
+    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"napa_1.5.sqlite"];
     
     NSError *error = nil;
     _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];

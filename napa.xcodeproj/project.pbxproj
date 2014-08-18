@@ -14,6 +14,7 @@
 		1451C91D1983A7E1006610AE /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1451C91C1983A7E1006610AE /* Crashlytics.framework */; };
 		1470F25A1998F2F700A00301 /* TripViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1470F2591998F2F700A00301 /* TripViewController.m */; };
 		14952A6D1955E1B300B8D34A /* DateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 14952A6C1955E1B300B8D34A /* DateCell.m */; };
+		1497879C19A256CD00CEDE0A /* TripCollectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1497879B19A256CD00CEDE0A /* TripCollectionHeaderView.m */; };
 		14B3D41E197F05EB00B01601 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 14B3D41D197F05EB00B01601 /* Podfile */; };
 		14F74C151932465D00BA28C7 /* NewEditTripViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F74C141932465D00BA28C7 /* NewEditTripViewController.m */; };
 		14F74C1B19324E5600BA28C7 /* NSDate+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F74C1A19324E5600BA28C7 /* NSDate+Additions.m */; };
@@ -65,6 +66,8 @@
 		1470F2591998F2F700A00301 /* TripViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TripViewController.m; sourceTree = "<group>"; };
 		14952A6B1955E1B300B8D34A /* DateCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateCell.h; sourceTree = "<group>"; };
 		14952A6C1955E1B300B8D34A /* DateCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateCell.m; sourceTree = "<group>"; };
+		1497879A19A256CD00CEDE0A /* TripCollectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TripCollectionHeaderView.h; sourceTree = "<group>"; };
+		1497879B19A256CD00CEDE0A /* TripCollectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TripCollectionHeaderView.m; sourceTree = "<group>"; };
 		14B3D41D197F05EB00B01601 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		14F74C131932465D00BA28C7 /* NewEditTripViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewEditTripViewController.h; sourceTree = "<group>"; };
 		14F74C141932465D00BA28C7 /* NewEditTripViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewEditTripViewController.m; sourceTree = "<group>"; };
@@ -162,6 +165,8 @@
 				1428B4A419607C1200AD2187 /* TripsViewControllerDataSource.m */,
 				14314912197BEFAD00284327 /* StartDateView.h */,
 				14314913197BEFAD00284327 /* StartDateView.m */,
+				1497879A19A256CD00CEDE0A /* TripCollectionHeaderView.h */,
+				1497879B19A256CD00CEDE0A /* TripCollectionHeaderView.m */,
 			);
 			name = Trips;
 			sourceTree = "<group>";
@@ -429,6 +434,7 @@
 				1470F25A1998F2F700A00301 /* TripViewController.m in Sources */,
 				14F74C151932465D00BA28C7 /* NewEditTripViewController.m in Sources */,
 				14F74C1E19324FC900BA28C7 /* Trip.m in Sources */,
+				1497879C19A256CD00CEDE0A /* TripCollectionHeaderView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

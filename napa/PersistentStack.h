@@ -11,7 +11,7 @@
 
 @interface PersistentStack : NSObject
 
-@property (nonatomic,strong,readonly) NSManagedObjectContext* managedObjectContext;
+@property (nonatomic, strong, readonly) NSManagedObjectContext* managedObjectContext;
 
 - (void)saveContext;
 

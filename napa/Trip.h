@@ -12,9 +12,10 @@
 
 @interface Trip : NSManagedObject
 
-@property (nonatomic, retain) NSString *name;
-@property (nonatomic, retain) NSDate * startDate;
-@property (nonatomic, retain) NSDate * endDate;
+@property (nonatomic) NSString *name;
+@property (nonatomic) NSDate *startDate;
+@property (nonatomic) NSDate *endDate;
+@property (nonatomic) NSString *sectionIdentifier;
 
 + (instancetype)insertTripWithName:(NSString*)name
                          startDate:(NSDate*)startDate

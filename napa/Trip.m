@@ -8,12 +8,12 @@
 
 #import "Trip.h"
 
-
 @implementation Trip
 
 @dynamic name;
 @dynamic startDate;
 @dynamic endDate;
+@dynamic sectionIdentifier;
 
 + (instancetype)insertTripWithName:(NSString*)name
                          startDate:(NSDate*)startDate
@@ -40,10 +40,28 @@
     request.fetchBatchSize= 20;
     // Edit the sort key as appropriate.
     request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"startDate" ascending:YES]];
+    // Use the sectionIdentifier property to group into sections.
     return [[NSFetchedResultsController alloc] initWithFetchRequest:request
                                                managedObjectContext:managedObjectContext
-                                                 sectionNameKeyPath:nil
+                                                 sectionNameKeyPath:@"sectionIdentifier"
                                                           cacheName:nil];
+}
+
+#pragma mark - Transient properties
+
+- (NSString *)sectionIdentifier
+{
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"YYYY"];
+    return [dateFormatter stringFromDate:self.startDate];
+}
+
+#pragma mark - Key path dependencies
+
++ (NSSet *)keyPathsForValuesAffectingSectionIdentifier
+{
+    // If the value of start date changes, the section identifier may change as well.
+    return [NSSet setWithObject:@"startDate"];
 }
 
 @end
