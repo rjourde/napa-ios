@@ -8,34 +8,15 @@
 
 #import "NewEditTripViewController.h"
 
+#import "NewEditTripDataSource.h"
 #import "TripViewController.h"
 #import "TextFieldCell.h"
 
-#define kPickerAnimationDuration    0.40   // duration for the animation to slide the date picker into view
-#define kDatePickerTag              99     // view tag identifiying the date picker view
-
-#define kTitleKey       @"title"   // key for obtaining the data source item's title
-#define kDateKey        @"date"    // key for obtaining the data source item's date value
-
-#define kNameSection    0
-#define kDateSection    1
-
-// keep track of which rows have date cells
-#define kDateStartRow   0
-#define kDateEndRow     1
-
-static NSString *kNameCellID = @"nameCell";     // the cell containing the text field
-static NSString *kDateCellID = @"dateCell";     // the cells with the start or end date
-static NSString *kDatePickerID = @"datePicker"; // the cell containing the date picker
+#define kDatePickerTag  99     // view tag identifiying the date picker view
 
 @interface NewEditTripViewController ()
 
-@property (nonatomic, strong) NSArray *dataArray;
-@property (nonatomic, strong) NSDateFormatter *dateFormatter;
-@property (nonatomic, strong) UITextField *nameTextField; // textfield of the name cell
-
-// keep track which indexPath points to the cell with UIDatePicker
-@property (nonatomic, strong) NSIndexPath *datePickerIndexPath;
+@property (nonatomic, strong) NewEditTripDataSource *tripDataSource;
 
 @property (assign) NSInteger pickerCellRowHeight;
 
@@ -51,7 +32,6 @@ static NSString *kDatePickerID = @"datePicker"; // the cell containing the date 
 {
     self = [super initWithStyle:style];
     if (self) {
-        // Custom initialization
         self.editModeON = NO;
     }
     return self;
@@ -61,20 +41,20 @@ static NSString *kDatePickerID = @"datePicker"; // the cell containing the date 
 {
     Trip *trip = (Trip *)self.objectToEdit;
     
-    NSMutableDictionary *itemOne;
-    NSMutableDictionary *itemTwo;
     if (self.editModeON && trip)
     {
-        itemOne = [@{ kTitleKey : @"Start Date", kDateKey : trip.startDate } mutableCopy];
-        itemTwo = [@{ kTitleKey : @"End Date", kDateKey : trip.endDate } mutableCopy];
+        self.tripDataSource = [[NewEditTripDataSource alloc] initWithTripName:trip.name
+                                                                    startDate:trip.startDate
+                                                                      endDate:trip.endDate];
     }
     else
     {
-        itemOne = [@{ kTitleKey : @"Start Date", kDateKey : [NSDate date] } mutableCopy];
-        itemTwo = [@{ kTitleKey : @"End Date", kDateKey : [NSDate date] } mutableCopy];
+        self.tripDataSource = [[NewEditTripDataSource alloc] initWithTripName: @""
+                                                                    startDate:[NSDate date]
+                                                                      endDate:[NSDate date]];
     }
     
-    self.dataArray = @[itemOne, itemTwo];
+    self.tableView.dataSource = self.tripDataSource;
 }
 
 - (void)viewDidLoad
@@ -88,9 +68,6 @@ static NSString *kDatePickerID = @"datePicker"; // the cell containing the date 
     }
     
     [self InitializeDataSource];
-    
-    self.dateFormatter = [[NSDateFormatter alloc] init];
-    [self.dateFormatter setDateStyle:NSDateFormatterMediumStyle];
     
     // obtain the picker view cell's height, works because the cell was pre-defined in our storyboard
     UITableViewCell *pickerViewCellToCheck = [self.tableView dequeueReusableCellWithIdentifier:kDatePickerID];
@@ -117,7 +94,7 @@ static NSString *kDatePickerID = @"datePicker"; // the cell containing the date 
 - (void)viewDidAppear:(BOOL)animated
 {
     if (!self.editModeON) {
-        [self.nameTextField becomeFirstResponder];
+        [self.tripDataSource.nameTextField becomeFirstResponder];
     }
 }
 
@@ -130,7 +107,7 @@ static NSString *kDatePickerID = @"datePicker"; // the cell containing the date 
 - (void)dismissKeyboard
 {
     [self.view removeGestureRecognizer:self.tap];
-    [self.nameTextField resignFirstResponder];
+    [self.tripDataSource.nameTextField resignFirstResponder];
 }
 
 #pragma mark - Locale
@@ -170,137 +147,28 @@ static NSString *kDatePickerID = @"datePicker"; // the cell containing the date 
  */
 - (void)updateDatePicker
 {
-    if (self.datePickerIndexPath != nil)
+    if ([self.tripDataSource hasInlineDatePicker])
     {
-        UITableViewCell *associatedDatePickerCell = [self.tableView cellForRowAtIndexPath:self.datePickerIndexPath];
+        NSIndexPath *datePickerIndexPath = self.tripDataSource.datePickerIndexPath;
+        
+        UITableViewCell *associatedDatePickerCell = [self.tableView cellForRowAtIndexPath:datePickerIndexPath];
         
         UIDatePicker *targetedDatePicker = (UIDatePicker *)[associatedDatePickerCell viewWithTag:kDatePickerTag];
         if (targetedDatePicker != nil)
         {
             // we found a UIDatePicker in this cell, so update it's date value
             //
-            NSDictionary *itemData = self.dataArray[self.datePickerIndexPath.row - 1];
+            NSDictionary *itemData = [self.tripDataSource itemAtIndex: datePickerIndexPath.row - 1];
             [targetedDatePicker setDate:[itemData valueForKey:kDateKey] animated:NO];
         }
     }
-}
-
-/*! Determines if the UITableViewController has a UIDatePicker in any of its cells.
- */
-- (BOOL)hasInlineDatePicker
-{
-    return (self.datePickerIndexPath != nil);
-}
-
-/*! Determines if the given indexPath points to a cell that contains the UIDatePicker.
- 
- @param indexPath The indexPath to check if it represents a cell with the UIDatePicker.
- */
-- (BOOL)indexPathHasPicker:(NSIndexPath *)indexPath
-{
-    return ([self hasInlineDatePicker] && self.datePickerIndexPath.row == indexPath.row);
-}
-
-/*! Determines if the given indexPath points to a cell that contains the start/end dates.
- 
- @param indexPath The indexPath to check if it represents start/end date cell.
- */
-- (BOOL)indexPathHasDate:(NSIndexPath *)indexPath
-{
-    BOOL hasDate = NO;
-    
-    if ((indexPath.row == kDateStartRow) ||
-        (indexPath.row == kDateEndRow || ([self hasInlineDatePicker] && (indexPath.row == kDateEndRow + 1))))
-    {
-        hasDate = YES;
-    }
-    
-    return hasDate;
-}
-
-#pragma mark - Table view data source
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 2;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    if(section == kNameSection)
-    {
-        return 1;
-    }
-    else
-    {
-        if ([self hasInlineDatePicker])
-        {
-            // we have a date picker, so allow for it in the number of rows in this section
-            NSInteger numRows = self.dataArray.count;
-            return ++numRows;
-        }
-        
-        return self.dataArray.count;
-    }
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if(indexPath.section == kNameSection)
-    {
-        TextFieldCell *textFieldCell = (TextFieldCell *)[tableView dequeueReusableCellWithIdentifier:kNameCellID];
-        self.nameTextField = textFieldCell.textField;
-        if (self.editModeON && self.objectToEdit)
-        {
-            self.nameTextField.text = ((Trip *)self.objectToEdit).name;
-        }
-        return textFieldCell;
-    }
-    // need to do this only for the date section
-    NSString *cellID = @"";
-    if ([self indexPathHasPicker:indexPath])
-    {
-        // the indexPath is the one containing the inline date picker
-        cellID = kDatePickerID;     // the current/opened date picker cell
-    }
-    else if ([self indexPathHasDate:indexPath])
-    {
-        // the indexPath is one that contains the date information
-        cellID = kDateCellID;       // the start/end date cells
-    }
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
-
-    // if we have a date picker open whose cell is above the cell we want to update,
-    // then we have one more cell than the model allows
-    NSInteger modelRow = indexPath.row;
-    if (self.datePickerIndexPath != nil && self.datePickerIndexPath.row < indexPath.row)
-    {
-        modelRow--;
-    }
-    
-    NSDictionary *itemData = nil;
-    if(![indexPath isEqual:self.datePickerIndexPath])
-    {
-        itemData = self.dataArray[modelRow];
-    }
-    
-    // proceed to configure our cell
-    if ([cellID isEqualToString:kDateCellID])
-    {
-        // we have either start or end date cells, populate their date field
-        cell.textLabel.text = [itemData valueForKey:kTitleKey];
-        cell.detailTextLabel.text = [self.dateFormatter stringFromDate:[itemData valueForKey:kDateKey]];
-        cell.detailTextLabel.textColor = cell.textLabel.textColor;
-    }
-    
-	return cell;
 }
 
 #pragma mark - UITableViewDelegate
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return ([self indexPathHasPicker:indexPath] ? self.pickerCellRowHeight : self.tableView.rowHeight);
+    return ([self.tripDataSource indexPathHasPicker:indexPath] ? self.pickerCellRowHeight : self.tableView.rowHeight);
 }
 
 /*! Adds or removes a UIDatePicker cell below the given indexPath.
@@ -340,21 +208,22 @@ static NSString *kDatePickerID = @"datePicker"; // the cell containing the date 
     [self.tableView beginUpdates];
     
     BOOL before = NO;   // indicates if the date picker is below "indexPath", help us determine which row to reveal
-    if ([self hasInlineDatePicker])
+    BOOL sameCellClicked = NO;
+    if ([self.tripDataSource hasInlineDatePicker])
     {
-        before = self.datePickerIndexPath.row < indexPath.row;
+        before = self.tripDataSource.datePickerIndexPath.row < indexPath.row;
+        sameCellClicked = (self.tripDataSource.datePickerIndexPath.row - 1 == indexPath.row);
     }
     
-    BOOL sameCellClicked = (self.datePickerIndexPath.row - 1 == indexPath.row);
-    
     // remove any date picker cell if it exists
-    if ([self hasInlineDatePicker])
+    if ([self.tripDataSource hasInlineDatePicker])
     {
         [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
         
-        [self.tableView deleteRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:self.datePickerIndexPath.row inSection:kDateSection]]
+        [self.tableView deleteRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:self.tripDataSource.datePickerIndexPath.row
+                                                                    inSection:kDateSection]]
                               withRowAnimation:UITableViewRowAnimationFade];
-        self.datePickerIndexPath = nil;
+        self.tripDataSource.datePickerIndexPath = nil;
     }
     
     if (!sameCellClicked)
@@ -364,7 +233,7 @@ static NSString *kDatePickerID = @"datePicker"; // the cell containing the date 
         NSIndexPath *indexPathToReveal = [NSIndexPath indexPathForRow:rowToReveal inSection:kDateSection];
         
         [self toggleDatePickerForSelectedIndexPath:indexPathToReveal];
-        self.datePickerIndexPath = [NSIndexPath indexPathForRow:indexPathToReveal.row + 1 inSection:kDateSection];
+        self.tripDataSource.datePickerIndexPath = [NSIndexPath indexPathForRow:indexPathToReveal.row + 1 inSection:kDateSection];
     }
     
     [self.tableView endUpdates];
@@ -386,17 +255,6 @@ static NSString *kDatePickerID = @"datePicker"; // the cell containing the date 
     }
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 #pragma mark - Actions
 
 - (IBAction)cancel:(id)sender
@@ -406,8 +264,8 @@ static NSString *kDatePickerID = @"datePicker"; // the cell containing the date 
 
 - (IBAction)done:(id)sender
 {
-    NSDate *startDate = [self.dataArray[0] valueForKey:kDateKey];
-    NSDate *endDate = [self.dataArray[1] valueForKey:kDateKey];
+    NSDate *startDate = [[self.tripDataSource itemAtIndex:kDateStartRow] valueForKey:kDateKey];
+    NSDate *endDate = [[self.tripDataSource itemAtIndex:kDateEndRow] valueForKey:kDateKey];
     
     // Before creating a new trip, check if the dates are valid
     if([endDate isEarlierThan:startDate])
@@ -422,10 +280,13 @@ static NSString *kDatePickerID = @"datePicker"; // the cell containing the date 
     }
     else
     {
+        NSIndexPath *cellIndexPath = [NSIndexPath indexPathForRow:0 inSection:kNameSection];
+        TextFieldCell *cell = (TextFieldCell *)[self.tableView cellForRowAtIndexPath:cellIndexPath];
+        
         Trip* trip;
         // Create new trip
         if (!self.editModeON) {
-            trip = [Trip insertTripWithName:self.nameTextField.text
+            trip = [Trip insertTripWithName:cell.textField.text
                                   startDate:startDate
                                     endDate:endDate
                      inManagedObjectContext:self.managedObjectContext];
@@ -434,7 +295,7 @@ static NSString *kDatePickerID = @"datePicker"; // the cell containing the date 
         else
         {
             trip = (Trip *)self.objectToEdit;
-            trip.name = self.nameTextField.text;
+            trip.name = cell.textField.text;
             trip.startDate = startDate;
             trip.endDate = endDate;
         }
@@ -449,38 +310,43 @@ static NSString *kDatePickerID = @"datePicker"; // the cell containing the date 
  */
 - (IBAction)dateAction:(id)sender
 {
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
+    
+    NSIndexPath *datePickerIndexPath = self.tripDataSource.datePickerIndexPath;
+    
     // update the cell's date "above" the date picker cell
-    NSIndexPath *targetedCellIndexPath = [NSIndexPath indexPathForRow:self.datePickerIndexPath.row - 1 inSection:kDateSection];
+    NSIndexPath *targetedCellIndexPath = [NSIndexPath indexPathForRow:datePickerIndexPath.row - 1 inSection:kDateSection];
     
     UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:targetedCellIndexPath];
     UIDatePicker *targetedDatePicker = sender;
     
     // update our data model
-    NSMutableDictionary *itemData = self.dataArray[targetedCellIndexPath.row];
+    NSMutableDictionary *itemData = [self.tripDataSource itemAtIndex:targetedCellIndexPath.row];
     [itemData setValue:targetedDatePicker.date forKey:kDateKey];
     
     // update the cell's date string
-    cell.detailTextLabel.text = [self.dateFormatter stringFromDate:targetedDatePicker.date];
+    cell.detailTextLabel.text = [dateFormatter stringFromDate:targetedDatePicker.date];
     
     // Start date must be earlier than end date
-    NSDate *startDate = [self.dataArray[0] valueForKey:kDateKey];
-    NSDate *endDate = [self.dataArray[1] valueForKey:kDateKey];
+    NSDate *startDate = [[self.tripDataSource itemAtIndex:kDateStartRow] valueForKey:kDateKey];
+    NSDate *endDate = [[self.tripDataSource itemAtIndex:kDateEndRow] valueForKey:kDateKey];
     
     // update end date cell if start date picker is active
-    if(self.datePickerIndexPath.row - 1 == kDateStartRow && [startDate isLaterThan:endDate])
+    if(datePickerIndexPath.row - 1 == kDateStartRow && [startDate isLaterThan:endDate])
     {
         // update the end date cell
-        NSIndexPath *endDateCellIndexPath = [NSIndexPath indexPathForRow:self.datePickerIndexPath.row + 1 inSection:kDateSection];
+        NSIndexPath *endDateCellIndexPath = [NSIndexPath indexPathForRow:datePickerIndexPath.row + 1 inSection:kDateSection];
         UITableViewCell *endDatecell = [self.tableView cellForRowAtIndexPath:endDateCellIndexPath];
-        endDatecell.detailTextLabel.text = [self.dateFormatter stringFromDate:targetedDatePicker.date];
+        endDatecell.detailTextLabel.text = [dateFormatter stringFromDate:targetedDatePicker.date];
         
         // update date array with new date
-        NSMutableDictionary *itemData = self.dataArray[kDateEndRow];
+        NSMutableDictionary *itemData = [self.tripDataSource itemAtIndex:kDateEndRow];
         [itemData setValue:targetedDatePicker.date forKey:kDateKey];
     }
     
     // add strike through end date cell if end date picker is active
-    if(self.datePickerIndexPath.row - 1 == kDateEndRow && [endDate isEarlierThan:startDate])
+    if(datePickerIndexPath.row - 1 == kDateEndRow && [endDate isEarlierThan:startDate])
     {
         NSMutableAttributedString *attributeString = [[NSMutableAttributedString alloc] initWithString:cell.detailTextLabel.text];
          [attributeString addAttribute:NSStrikethroughStyleAttributeName value:@1 range:NSMakeRange(0, [attributeString length])];
@@ -502,7 +368,7 @@ static NSString *kDatePickerID = @"datePicker"; // the cell containing the date 
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-    [self.nameTextField resignFirstResponder];
+    [self.tripDataSource.nameTextField resignFirstResponder];
     
     return YES;
 }

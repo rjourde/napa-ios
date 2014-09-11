@@ -16,6 +16,7 @@
 		14952A6D1955E1B300B8D34A /* DateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 14952A6C1955E1B300B8D34A /* DateCell.m */; };
 		1497879C19A256CD00CEDE0A /* TripCollectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1497879B19A256CD00CEDE0A /* TripCollectionHeaderView.m */; };
 		14B3D41E197F05EB00B01601 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 14B3D41D197F05EB00B01601 /* Podfile */; };
+		14DBC0EA19BA456900989B7F /* NewEditTripDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 14DBC0E919BA456900989B7F /* NewEditTripDataSource.m */; };
 		14F74C151932465D00BA28C7 /* NewEditTripViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F74C141932465D00BA28C7 /* NewEditTripViewController.m */; };
 		14F74C1B19324E5600BA28C7 /* NSDate+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F74C1A19324E5600BA28C7 /* NSDate+Additions.m */; };
 		14F74C1E19324FC900BA28C7 /* Trip.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F74C1D19324FC900BA28C7 /* Trip.m */; };
@@ -69,6 +70,8 @@
 		1497879A19A256CD00CEDE0A /* TripCollectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TripCollectionHeaderView.h; sourceTree = "<group>"; };
 		1497879B19A256CD00CEDE0A /* TripCollectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TripCollectionHeaderView.m; sourceTree = "<group>"; };
 		14B3D41D197F05EB00B01601 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		14DBC0E819BA456900989B7F /* NewEditTripDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewEditTripDataSource.h; sourceTree = "<group>"; };
+		14DBC0E919BA456900989B7F /* NewEditTripDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewEditTripDataSource.m; sourceTree = "<group>"; };
 		14F74C131932465D00BA28C7 /* NewEditTripViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewEditTripViewController.h; sourceTree = "<group>"; };
 		14F74C141932465D00BA28C7 /* NewEditTripViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewEditTripViewController.m; sourceTree = "<group>"; };
 		14F74C1919324E5600BA28C7 /* NSDate+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Additions.h"; sourceTree = "<group>"; };
@@ -139,6 +142,8 @@
 				14F74C1A19324E5600BA28C7 /* NSDate+Additions.m */,
 				14F74C131932465D00BA28C7 /* NewEditTripViewController.h */,
 				14F74C141932465D00BA28C7 /* NewEditTripViewController.m */,
+				14DBC0E819BA456900989B7F /* NewEditTripDataSource.h */,
+				14DBC0E919BA456900989B7F /* NewEditTripDataSource.m */,
 			);
 			name = "New - Edit Trip";
 			sourceTree = "<group>";
@@ -429,6 +434,7 @@
 				1416A05B194DFFA900E0D89F /* TextFieldCell.m in Sources */,
 				14FB15E31931F85000021E7F /* main.m in Sources */,
 				14314914197BEFAD00284327 /* StartDateView.m in Sources */,
+				14DBC0EA19BA456900989B7F /* NewEditTripDataSource.m in Sources */,
 				14952A6D1955E1B300B8D34A /* DateCell.m in Sources */,
 				14FB16141931FCDD00021E7F /* TripViewCell.m in Sources */,
 				1470F25A1998F2F700A00301 /* TripViewController.m in Sources */,

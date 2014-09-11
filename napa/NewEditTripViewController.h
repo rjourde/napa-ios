@@ -20,9 +20,8 @@
 @interface NewEditTripViewController : UITableViewController
 
 @property (nonatomic, weak) id <NewEditTripViewControllerDelegate> delegate;
-
-@property (nonatomic, strong) NSManagedObjectContext* managedObjectContext;
 @property (nonatomic, strong) NSManagedObject* objectToEdit;
+@property (nonatomic, strong) NSManagedObjectContext* managedObjectContext;
 @property (nonatomic) bool editModeON;
 
 - (IBAction)cancel:(id)sender;
