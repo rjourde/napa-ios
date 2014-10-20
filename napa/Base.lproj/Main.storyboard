@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="rS3-R9-Ivy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="rS3-R9-Ivy">
     <dependencies>
-        <deployment defaultVersion="1792" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <deployment defaultVersion="1808" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -23,10 +23,10 @@
             </objects>
             <point key="canvasLocation" x="7" y="64"/>
         </scene>
-        <!--Trips View Controller - Napa-->
+        <!--Napa-->
         <scene sceneID="c9e-Hw-WwT">
             <objects>
-                <collectionViewController restorationIdentifier="TripsViewController" autoresizesArchivedViewToFullSize="NO" id="jrn-0A-d2b" customClass="TripsViewController" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="TripsViewController" autoresizesArchivedViewToFullSize="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="jrn-0A-d2b" customClass="TripsViewController" customModule="napa" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="N9U-uN-g8H">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -95,7 +95,6 @@
                             <subviews>
                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UQM-T0-h9d">
                                     <rect key="frame" x="15" y="0.0" width="280" height="30"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                     <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
@@ -130,10 +129,10 @@
             </objects>
             <point key="canvasLocation" x="419" y="66"/>
         </scene>
-        <!--New Edit Trip View Controller - Edit Trip-->
+        <!--Edit Trip-->
         <scene sceneID="ZXS-sd-F8C">
             <objects>
-                <tableViewController id="VUX-2l-3wr" customClass="NewEditTripViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="NewEditTripViewController" id="VUX-2l-3wr" customClass="NewEditTripViewController" customModule="napa" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="LWu-iD-POS">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -225,18 +224,15 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <outlet property="view" destination="LWu-iD-POS" id="otk-bh-Pwe"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JKA-Hw-u9h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1398" y="-617"/>
         </scene>
-        <!--View Controller - Timeline-->
+        <!--Timeline-->
         <scene sceneID="Nub-ox-Fe3">
             <objects>
-                <viewController restorationIdentifier="TimelineViewController" id="M9i-oK-wJ2" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TimelineViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="M9i-oK-wJ2" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4iR-Up-UGX"/>
                         <viewControllerLayoutGuide type="bottom" id="Wo8-oI-7gp"/>
@@ -255,7 +251,7 @@
         <!--Trip View Controller-->
         <scene sceneID="FAX-1O-a0f">
             <objects>
-                <tabBarController restorationIdentifier="TripViewController" definesPresentationContext="YES" id="qTU-Dq-6fi" customClass="TripViewController" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TripViewController" definesPresentationContext="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qTU-Dq-6fi" customClass="TripViewController" customModule="napa" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="cyV-Rf-qqi"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="djB-F6-UGo">
@@ -273,10 +269,10 @@
             </objects>
             <point key="canvasLocation" x="1144" y="232"/>
         </scene>
-        <!--View Controller - Maps-->
+        <!--Maps-->
         <scene sceneID="SXu-y3-y8d">
             <objects>
-                <viewController restorationIdentifier="MapsViewController" id="ifU-9A-267" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MapsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ifU-9A-267" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="stJ-31-RXK"/>
                         <viewControllerLayoutGuide type="bottom" id="aRw-9v-vn7"/>
@@ -292,10 +288,10 @@
             </objects>
             <point key="canvasLocation" x="1924" y="576"/>
         </scene>
-        <!--View Controller - Accomodations-->
+        <!--Accomodations-->
         <scene sceneID="tra-uA-Wp5">
             <objects>
-                <viewController restorationIdentifier="AccomodationsViewController" id="axe-2k-sNJ" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AccomodationsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="axe-2k-sNJ" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Epn-14-gf1"/>
                         <viewControllerLayoutGuide type="bottom" id="FkB-ua-7wZ"/>

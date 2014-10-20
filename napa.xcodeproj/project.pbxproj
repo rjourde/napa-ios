@@ -7,29 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1416A05B194DFFA900E0D89F /* TextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1416A05A194DFFA900E0D89F /* TextFieldCell.m */; };
-		1428B4A2196077C800AD2187 /* PersistentStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 1428B4A1196077C800AD2187 /* PersistentStack.m */; };
-		1428B4A519607C1200AD2187 /* TripsViewControllerDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 1428B4A419607C1200AD2187 /* TripsViewControllerDataSource.m */; };
-		14314914197BEFAD00284327 /* StartDateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14314913197BEFAD00284327 /* StartDateView.m */; };
+		14007B1D19E327BE0075D608 /* NewEditTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14007B1C19E327BE0075D608 /* NewEditTripViewController.swift */; };
+		14007B1F19E32AB90075D608 /* NewEditTripDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14007B1E19E32AB90075D608 /* NewEditTripDataSource.swift */; };
+		14007B2119E333FE0075D608 /* TextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14007B2019E333FE0075D608 /* TextFieldCell.swift */; };
 		1451C91D1983A7E1006610AE /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1451C91C1983A7E1006610AE /* Crashlytics.framework */; };
-		1470F25A1998F2F700A00301 /* TripViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1470F2591998F2F700A00301 /* TripViewController.m */; };
-		14952A6D1955E1B300B8D34A /* DateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 14952A6C1955E1B300B8D34A /* DateCell.m */; };
-		1497879C19A256CD00CEDE0A /* TripCollectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1497879B19A256CD00CEDE0A /* TripCollectionHeaderView.m */; };
+		14AB5EDA19D9EA8F00E74649 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AB5ED919D9EA8F00E74649 /* AppDelegate.swift */; };
+		14AB5EDC19D9EC3400E74649 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AB5EDB19D9EC3400E74649 /* Trip.swift */; };
+		14AB5EDE19D9F47800E74649 /* PersistentStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AB5EDD19D9F47800E74649 /* PersistentStack.swift */; };
 		14B3D41E197F05EB00B01601 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 14B3D41D197F05EB00B01601 /* Podfile */; };
-		14DBC0EA19BA456900989B7F /* NewEditTripDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 14DBC0E919BA456900989B7F /* NewEditTripDataSource.m */; };
-		14F74C151932465D00BA28C7 /* NewEditTripViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F74C141932465D00BA28C7 /* NewEditTripViewController.m */; };
-		14F74C1B19324E5600BA28C7 /* NSDate+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F74C1A19324E5600BA28C7 /* NSDate+Additions.m */; };
-		14F74C1E19324FC900BA28C7 /* Trip.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F74C1D19324FC900BA28C7 /* Trip.m */; };
+		14EA9B8019EC703200F60559 /* NSDateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EA9B7F19EC703200F60559 /* NSDateExtensions.swift */; };
+		14EBC42819DC9BF300DA1BD3 /* TripsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EBC42719DC9BF300DA1BD3 /* TripsViewController.swift */; };
+		14EBC42A19DC9DE900DA1BD3 /* TripsViewControllerDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EBC42919DC9DE900DA1BD3 /* TripsViewControllerDataSource.swift */; };
+		14F339E819E052AD00297B06 /* TripCollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F339E719E052AD00297B06 /* TripCollectionHeaderView.swift */; };
+		14F588A619E9621000E4A9D1 /* DateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F588A519E9621000E4A9D1 /* DateCell.swift */; };
+		14F588A819E9638B00E4A9D1 /* TripViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F588A719E9638B00E4A9D1 /* TripViewCell.swift */; };
+		14F588AA19E9641D00E4A9D1 /* StartDateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F588A919E9641D00E4A9D1 /* StartDateView.swift */; };
+		14F588AC19E9672100E4A9D1 /* TripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F588AB19E9672100E4A9D1 /* TripViewController.swift */; };
 		14FB15D51931F85000021E7F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14FB15D41931F85000021E7F /* Foundation.framework */; };
 		14FB15D71931F85000021E7F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14FB15D61931F85000021E7F /* CoreGraphics.framework */; };
 		14FB15D91931F85000021E7F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14FB15D81931F85000021E7F /* UIKit.framework */; };
 		14FB15DB1931F85000021E7F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14FB15DA1931F85000021E7F /* CoreData.framework */; };
-		14FB15E11931F85000021E7F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 14FB15DF1931F85000021E7F /* InfoPlist.strings */; };
-		14FB15E31931F85000021E7F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FB15E21931F85000021E7F /* main.m */; };
-		14FB15E71931F85000021E7F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FB15E61931F85000021E7F /* AppDelegate.m */; };
 		14FB15EA1931F85000021E7F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14FB15E81931F85000021E7F /* Main.storyboard */; };
 		14FB15ED1931F85000021E7F /* napa.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 14FB15EB1931F85000021E7F /* napa.xcdatamodeld */; };
-		14FB15F01931F85000021E7F /* TripsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FB15EF1931F85000021E7F /* TripsViewController.m */; };
 		14FB15F51931F85000021E7F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14FB15F41931F85000021E7F /* Images.xcassets */; };
 		14FB15FC1931F85000021E7F /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14FB15FB1931F85000021E7F /* XCTest.framework */; };
 		14FB15FD1931F85000021E7F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14FB15D41931F85000021E7F /* Foundation.framework */; };
@@ -37,7 +36,6 @@
 		14FB15FF1931F85000021E7F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14FB15DA1931F85000021E7F /* CoreData.framework */; };
 		14FB16071931F85000021E7F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 14FB16051931F85000021E7F /* InfoPlist.strings */; };
 		14FB16091931F85000021E7F /* napaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FB16081931F85000021E7F /* napaTests.m */; };
-		14FB16141931FCDD00021E7F /* TripViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FB16131931FCDD00021E7F /* TripViewCell.m */; };
 		14FDF36819601C4C0076021A /* .travis.yml in Resources */ = {isa = PBXBuildFile; fileRef = 14FDF36719601C4C0076021A /* .travis.yml */; };
 		6A2C3B216FEC4FBF87C8C4C3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8222A065D0CA41A29349AD7D /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -54,53 +52,36 @@
 
 /* Begin PBXFileReference section */
 		093A0DEFA34E475582DBD702 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
-		1416A059194DFFA900E0D89F /* TextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldCell.h; sourceTree = "<group>"; };
-		1416A05A194DFFA900E0D89F /* TextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextFieldCell.m; sourceTree = "<group>"; };
-		1428B4A0196077C800AD2187 /* PersistentStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersistentStack.h; sourceTree = "<group>"; };
-		1428B4A1196077C800AD2187 /* PersistentStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersistentStack.m; sourceTree = "<group>"; };
-		1428B4A319607C1200AD2187 /* TripsViewControllerDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TripsViewControllerDataSource.h; sourceTree = "<group>"; };
-		1428B4A419607C1200AD2187 /* TripsViewControllerDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TripsViewControllerDataSource.m; sourceTree = "<group>"; };
-		14314912197BEFAD00284327 /* StartDateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartDateView.h; sourceTree = "<group>"; };
-		14314913197BEFAD00284327 /* StartDateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartDateView.m; sourceTree = "<group>"; };
+		14007B1C19E327BE0075D608 /* NewEditTripViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewEditTripViewController.swift; sourceTree = "<group>"; };
+		14007B1E19E32AB90075D608 /* NewEditTripDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewEditTripDataSource.swift; sourceTree = "<group>"; };
+		14007B2019E333FE0075D608 /* TextFieldCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldCell.swift; sourceTree = "<group>"; };
 		1451C91C1983A7E1006610AE /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
-		1470F2581998F2F700A00301 /* TripViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TripViewController.h; sourceTree = "<group>"; };
-		1470F2591998F2F700A00301 /* TripViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TripViewController.m; sourceTree = "<group>"; };
-		14952A6B1955E1B300B8D34A /* DateCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateCell.h; sourceTree = "<group>"; };
-		14952A6C1955E1B300B8D34A /* DateCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateCell.m; sourceTree = "<group>"; };
-		1497879A19A256CD00CEDE0A /* TripCollectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TripCollectionHeaderView.h; sourceTree = "<group>"; };
-		1497879B19A256CD00CEDE0A /* TripCollectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TripCollectionHeaderView.m; sourceTree = "<group>"; };
-		14B3D41D197F05EB00B01601 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
-		14DBC0E819BA456900989B7F /* NewEditTripDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewEditTripDataSource.h; sourceTree = "<group>"; };
-		14DBC0E919BA456900989B7F /* NewEditTripDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewEditTripDataSource.m; sourceTree = "<group>"; };
-		14F74C131932465D00BA28C7 /* NewEditTripViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewEditTripViewController.h; sourceTree = "<group>"; };
-		14F74C141932465D00BA28C7 /* NewEditTripViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewEditTripViewController.m; sourceTree = "<group>"; };
-		14F74C1919324E5600BA28C7 /* NSDate+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Additions.h"; sourceTree = "<group>"; };
-		14F74C1A19324E5600BA28C7 /* NSDate+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Additions.m"; sourceTree = "<group>"; };
-		14F74C1C19324FC900BA28C7 /* Trip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Trip.h; sourceTree = "<group>"; };
-		14F74C1D19324FC900BA28C7 /* Trip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Trip.m; sourceTree = "<group>"; };
+		14AB5ED919D9EA8F00E74649 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		14AB5EDB19D9EC3400E74649 /* Trip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
+		14AB5EDD19D9F47800E74649 /* PersistentStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistentStack.swift; sourceTree = "<group>"; };
+		14B3D41D197F05EB00B01601 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		14EA9B7F19EC703200F60559 /* NSDateExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateExtensions.swift; sourceTree = "<group>"; };
+		14EBC42719DC9BF300DA1BD3 /* TripsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripsViewController.swift; sourceTree = "<group>"; };
+		14EBC42919DC9DE900DA1BD3 /* TripsViewControllerDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripsViewControllerDataSource.swift; sourceTree = "<group>"; };
+		14F339E719E052AD00297B06 /* TripCollectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripCollectionHeaderView.swift; sourceTree = "<group>"; };
+		14F588A519E9621000E4A9D1 /* DateCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateCell.swift; sourceTree = "<group>"; };
+		14F588A719E9638B00E4A9D1 /* TripViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripViewCell.swift; sourceTree = "<group>"; };
+		14F588A919E9641D00E4A9D1 /* StartDateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartDateView.swift; sourceTree = "<group>"; };
+		14F588AB19E9672100E4A9D1 /* TripViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripViewController.swift; sourceTree = "<group>"; };
 		14FB15D11931F85000021E7F /* napa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = napa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14FB15D41931F85000021E7F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		14FB15D61931F85000021E7F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		14FB15D81931F85000021E7F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		14FB15DA1931F85000021E7F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		14FB15DE1931F85000021E7F /* napa-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "napa-Info.plist"; sourceTree = "<group>"; };
-		14FB15E01931F85000021E7F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		14FB15E21931F85000021E7F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		14FB15E41931F85000021E7F /* napa-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "napa-Prefix.pch"; sourceTree = "<group>"; };
-		14FB15E51931F85000021E7F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		14FB15E61931F85000021E7F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		14FB15E91931F85000021E7F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		14FB15EC1931F85000021E7F /* napa.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = napa.xcdatamodel; sourceTree = "<group>"; };
-		14FB15EE1931F85000021E7F /* TripsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TripsViewController.h; sourceTree = "<group>"; };
-		14FB15EF1931F85000021E7F /* TripsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TripsViewController.m; sourceTree = "<group>"; };
 		14FB15F41931F85000021E7F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		14FB15FA1931F85000021E7F /* napaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = napaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		14FB15FB1931F85000021E7F /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		14FB16041931F85000021E7F /* napaTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "napaTests-Info.plist"; sourceTree = "<group>"; };
 		14FB16061931F85000021E7F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		14FB16081931F85000021E7F /* napaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = napaTests.m; sourceTree = "<group>"; };
-		14FB16121931FCDD00021E7F /* TripViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TripViewCell.h; sourceTree = "<group>"; };
-		14FB16131931FCDD00021E7F /* TripViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TripViewCell.m; sourceTree = "<group>"; };
 		14FDF36719601C4C0076021A /* .travis.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .travis.yml; sourceTree = SOURCE_ROOT; };
 		8222A065D0CA41A29349AD7D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -136,14 +117,10 @@
 		1470F25B1998F75900A00301 /* New - Edit Trip */ = {
 			isa = PBXGroup;
 			children = (
-				1416A059194DFFA900E0D89F /* TextFieldCell.h */,
-				1416A05A194DFFA900E0D89F /* TextFieldCell.m */,
-				14F74C1919324E5600BA28C7 /* NSDate+Additions.h */,
-				14F74C1A19324E5600BA28C7 /* NSDate+Additions.m */,
-				14F74C131932465D00BA28C7 /* NewEditTripViewController.h */,
-				14F74C141932465D00BA28C7 /* NewEditTripViewController.m */,
-				14DBC0E819BA456900989B7F /* NewEditTripDataSource.h */,
-				14DBC0E919BA456900989B7F /* NewEditTripDataSource.m */,
+				14007B2019E333FE0075D608 /* TextFieldCell.swift */,
+				14007B1C19E327BE0075D608 /* NewEditTripViewController.swift */,
+				14007B1E19E32AB90075D608 /* NewEditTripDataSource.swift */,
+				14EA9B7F19EC703200F60559 /* NSDateExtensions.swift */,
 			);
 			name = "New - Edit Trip";
 			sourceTree = "<group>";
@@ -151,8 +128,7 @@
 		1470F25C1998F77C00A00301 /* Trip */ = {
 			isa = PBXGroup;
 			children = (
-				1470F2581998F2F700A00301 /* TripViewController.h */,
-				1470F2591998F2F700A00301 /* TripViewController.m */,
+				14F588AB19E9672100E4A9D1 /* TripViewController.swift */,
 			);
 			name = Trip;
 			sourceTree = "<group>";
@@ -160,18 +136,12 @@
 		1470F25D1998F78300A00301 /* Trips */ = {
 			isa = PBXGroup;
 			children = (
-				14952A6B1955E1B300B8D34A /* DateCell.h */,
-				14952A6C1955E1B300B8D34A /* DateCell.m */,
-				14FB15EE1931F85000021E7F /* TripsViewController.h */,
-				14FB15EF1931F85000021E7F /* TripsViewController.m */,
-				14FB16121931FCDD00021E7F /* TripViewCell.h */,
-				14FB16131931FCDD00021E7F /* TripViewCell.m */,
-				1428B4A319607C1200AD2187 /* TripsViewControllerDataSource.h */,
-				1428B4A419607C1200AD2187 /* TripsViewControllerDataSource.m */,
-				14314912197BEFAD00284327 /* StartDateView.h */,
-				14314913197BEFAD00284327 /* StartDateView.m */,
-				1497879A19A256CD00CEDE0A /* TripCollectionHeaderView.h */,
-				1497879B19A256CD00CEDE0A /* TripCollectionHeaderView.m */,
+				14F588A519E9621000E4A9D1 /* DateCell.swift */,
+				14F588A719E9638B00E4A9D1 /* TripViewCell.swift */,
+				14F588A919E9641D00E4A9D1 /* StartDateView.swift */,
+				14EBC42719DC9BF300DA1BD3 /* TripsViewController.swift */,
+				14EBC42919DC9DE900DA1BD3 /* TripsViewControllerDataSource.swift */,
+				14F339E719E052AD00297B06 /* TripCollectionHeaderView.swift */,
 			);
 			name = Trips;
 			sourceTree = "<group>";
@@ -179,10 +149,8 @@
 		1470F25E1998F7E300A00301 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				14F74C1C19324FC900BA28C7 /* Trip.h */,
-				14F74C1D19324FC900BA28C7 /* Trip.m */,
-				1428B4A0196077C800AD2187 /* PersistentStack.h */,
-				1428B4A1196077C800AD2187 /* PersistentStack.m */,
+				14AB5EDB19D9EC3400E74649 /* Trip.swift */,
+				14AB5EDD19D9F47800E74649 /* PersistentStack.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -239,9 +207,6 @@
 			isa = PBXGroup;
 			children = (
 				14FB15DE1931F85000021E7F /* napa-Info.plist */,
-				14FB15DF1931F85000021E7F /* InfoPlist.strings */,
-				14FB15E21931F85000021E7F /* main.m */,
-				14FB15E41931F85000021E7F /* napa-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -271,8 +236,7 @@
 				1470F25D1998F78300A00301 /* Trips */,
 				1470F25C1998F77C00A00301 /* Trip */,
 				1470F25B1998F75900A00301 /* New - Edit Trip */,
-				14FB15E51931F85000021E7F /* AppDelegate.h */,
-				14FB15E61931F85000021E7F /* AppDelegate.m */,
+				14AB5ED919D9EA8F00E74649 /* AppDelegate.swift */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -358,7 +322,6 @@
 			files = (
 				14B3D41E197F05EB00B01601 /* Podfile in Resources */,
 				14FB15F51931F85000021E7F /* Images.xcassets in Resources */,
-				14FB15E11931F85000021E7F /* InfoPlist.strings in Resources */,
 				14FDF36819601C4C0076021A /* .travis.yml in Resources */,
 				14FB15EA1931F85000021E7F /* Main.storyboard in Resources */,
 			);
@@ -425,22 +388,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				14F74C1B19324E5600BA28C7 /* NSDate+Additions.m in Sources */,
-				14FB15F01931F85000021E7F /* TripsViewController.m in Sources */,
-				1428B4A2196077C800AD2187 /* PersistentStack.m in Sources */,
-				1428B4A519607C1200AD2187 /* TripsViewControllerDataSource.m in Sources */,
+				14F339E819E052AD00297B06 /* TripCollectionHeaderView.swift in Sources */,
+				14F588A619E9621000E4A9D1 /* DateCell.swift in Sources */,
+				14007B1D19E327BE0075D608 /* NewEditTripViewController.swift in Sources */,
+				14EBC42819DC9BF300DA1BD3 /* TripsViewController.swift in Sources */,
 				14FB15ED1931F85000021E7F /* napa.xcdatamodeld in Sources */,
-				14FB15E71931F85000021E7F /* AppDelegate.m in Sources */,
-				1416A05B194DFFA900E0D89F /* TextFieldCell.m in Sources */,
-				14FB15E31931F85000021E7F /* main.m in Sources */,
-				14314914197BEFAD00284327 /* StartDateView.m in Sources */,
-				14DBC0EA19BA456900989B7F /* NewEditTripDataSource.m in Sources */,
-				14952A6D1955E1B300B8D34A /* DateCell.m in Sources */,
-				14FB16141931FCDD00021E7F /* TripViewCell.m in Sources */,
-				1470F25A1998F2F700A00301 /* TripViewController.m in Sources */,
-				14F74C151932465D00BA28C7 /* NewEditTripViewController.m in Sources */,
-				14F74C1E19324FC900BA28C7 /* Trip.m in Sources */,
-				1497879C19A256CD00CEDE0A /* TripCollectionHeaderView.m in Sources */,
+				14EA9B8019EC703200F60559 /* NSDateExtensions.swift in Sources */,
+				14AB5EDE19D9F47800E74649 /* PersistentStack.swift in Sources */,
+				14F588A819E9638B00E4A9D1 /* TripViewCell.swift in Sources */,
+				14F588AA19E9641D00E4A9D1 /* StartDateView.swift in Sources */,
+				14F588AC19E9672100E4A9D1 /* TripViewController.swift in Sources */,
+				14007B2119E333FE0075D608 /* TextFieldCell.swift in Sources */,
+				14EBC42A19DC9DE900DA1BD3 /* TripsViewControllerDataSource.swift in Sources */,
+				14007B1F19E32AB90075D608 /* NewEditTripDataSource.swift in Sources */,
+				14AB5EDC19D9EC3400E74649 /* Trip.swift in Sources */,
+				14AB5EDA19D9EA8F00E74649 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -463,14 +425,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		14FB15DF1931F85000021E7F /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				14FB15E01931F85000021E7F /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
 		14FB15E81931F85000021E7F /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -566,6 +520,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -573,7 +528,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "napa/napa-Prefix.pch";
 				INFOPLIST_FILE = "napa/napa-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -584,6 +541,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -591,6 +549,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "napa/napa-Prefix.pch";
 				INFOPLIST_FILE = "napa/napa-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
