@@ -11,7 +11,7 @@ import CoreData
 
 class TripsViewController: UICollectionViewController, UIGestureRecognizerDelegate, UIActionSheetDelegate, TripsViewControllerDataSourceDelegate, NewEditTripViewControllerDelegate {
     
-    enum SegueIdentifier: String {
+    enum TripSegueIdentifier: String {
         case ShowTripSegueIdentifier    = "showTrip"
         case NewTripSegueIdentifier     = "newTrip"
         case EditTripSegueIdentifier    = "editTrip"
@@ -38,7 +38,7 @@ class TripsViewController: UICollectionViewController, UIGestureRecognizerDelega
         let lpgr = UILongPressGestureRecognizer(target: self, action: "handleLongPress")
         lpgr.minimumPressDuration = 0.5 //seconds
         lpgr.delegate = self
-        self.collectionView?.addGestureRecognizer(lpgr)
+        self.collectionView.addGestureRecognizer(lpgr)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -51,7 +51,7 @@ class TripsViewController: UICollectionViewController, UIGestureRecognizerDelega
         if gestureRecognizer.state == UIGestureRecognizerState.Began {
             let point = gestureRecognizer.locationInView(self.collectionView)
     
-            self.selectedIndexPath = self.collectionView?.indexPathForItemAtPoint(point)
+            self.selectedIndexPath = self.collectionView.indexPathForItemAtPoint(point)
             if (self.selectedIndexPath != nil)
             {
                 let message = UIAlertController(title: nil, message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
@@ -70,7 +70,7 @@ class TripsViewController: UICollectionViewController, UIGestureRecognizerDelega
     }
     
     func setupFetchedResultsController() {
-        self.tripsViewControllerDataSource = TripsViewControllerDataSource(collectionView: self.collectionView!)
+        self.tripsViewControllerDataSource = TripsViewControllerDataSource(collectionView: self.collectionView)
         self.tripsViewControllerDataSource?.fetchedResultsController = Trip.tripsFetchedResultsControllerInManagedObjectContext(self.managedObjectContext!)
         self.tripsViewControllerDataSource?.delegate = self
     }
@@ -106,29 +106,30 @@ class TripsViewController: UICollectionViewController, UIGestureRecognizerDelega
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
-        super.prepareForSegue(segue, sender:sender)
-        if let segueIdentifier =  SegueIdentifier.fromRaw(segue.identifier) {
-            switch segueIdentifier {
-            case .ShowTripSegueIdentifier:
-                if let currentTrip = self.currentTrip {
-                    let tripViewController = segue.destinationViewController as TripViewController
-                    tripViewController.setTrip(currentTrip)
-                } else {
-                    self.presentTripViewController(segue.destinationViewController as TripViewController)
+        if let segueIdentifier =  segue.identifier {
+            if let tripSegueIdentifier = TripSegueIdentifier(rawValue: segueIdentifier) {
+                switch tripSegueIdentifier {
+                case .ShowTripSegueIdentifier:
+                    if let currentTrip = self.currentTrip {
+                        let tripViewController = segue.destinationViewController as TripViewController
+                        tripViewController.setTrip(currentTrip)
+                    } else {
+                        self.presentTripViewController(segue.destinationViewController as TripViewController)
+                    }
+                case .NewTripSegueIdentifier:
+                    let navigationController = segue.destinationViewController as UINavigationController
+                    let newTripViewController = navigationController.viewControllers[0] as NewEditTripViewController
+                    newTripViewController.managedObjectContext = self.managedObjectContext!
+                    newTripViewController.delegate = self
+                case .EditTripSegueIdentifier:
+                    let navigationController = segue.destinationViewController as UINavigationController
+                    let editTripViewController = navigationController.viewControllers[0] as NewEditTripViewController
+                    editTripViewController.managedObjectContext = self.managedObjectContext!
+                    if let selectedIndexPath = self.selectedIndexPath? {
+                        editTripViewController.trip = self.tripsViewControllerDataSource?.itemAtIndexPath(selectedIndexPath) as Trip?
+                    }
+                    editTripViewController.delegate = self
                 }
-            case .NewTripSegueIdentifier:
-                let navigationController = segue.destinationViewController as UINavigationController
-                let newTripViewController = navigationController.viewControllers[0] as NewEditTripViewController
-                newTripViewController.managedObjectContext = self.managedObjectContext!
-                newTripViewController.delegate = self
-            case .EditTripSegueIdentifier:
-                let navigationController = segue.destinationViewController as UINavigationController
-                let editTripViewController = navigationController.viewControllers[0] as NewEditTripViewController
-                editTripViewController.managedObjectContext = self.managedObjectContext!
-                if let selectedIndexPath = self.selectedIndexPath? {
-                    editTripViewController.trip = self.tripsViewControllerDataSource?.itemAtIndexPath(selectedIndexPath) as Trip?
-                }
-                editTripViewController.delegate = self
             }
         }
     }
@@ -143,13 +144,13 @@ class TripsViewController: UICollectionViewController, UIGestureRecognizerDelega
         self.dismissViewControllerAnimated(true, completion:nil)
     
         self.currentTrip = trip
-        self.performSegueWithIdentifier(SegueIdentifier.ShowTripSegueIdentifier.toRaw(), sender:self)
+        self.performSegueWithIdentifier(TripSegueIdentifier.ShowTripSegueIdentifier.rawValue, sender:self)
     }
     
     // MARK: - UIAlertController action
     
     func editTrip() {
-        self.performSegueWithIdentifier(SegueIdentifier.EditTripSegueIdentifier.toRaw(), sender:self)
+        self.performSegueWithIdentifier(TripSegueIdentifier.EditTripSegueIdentifier.rawValue, sender:self)
     }
     
     func deleteTrip() {

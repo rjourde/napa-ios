@@ -196,7 +196,7 @@ class TripsViewControllerDataSource: NSObject, UICollectionViewDataSource, NSFet
     }
     
     func selectedItem() -> AnyObject? {
-        if let path = self.collectionView?.indexPathsForSelectedItems().last as? NSIndexPath {
+        if let path = self.collectionView?.indexPathsForSelectedItems()?.last as? NSIndexPath {
             return self.fetchedResultsController?.objectAtIndexPath(path)
         }
 

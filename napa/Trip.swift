@@ -10,8 +10,8 @@ import CoreData
 
 class Trip: NSManagedObject {
     var name = "new Trip"
-    var startDate = NSDate.date()
-    var endDate = NSDate.date()
+    var startDate = NSDate()
+    var endDate = NSDate()
     var sectionIdentifier: String {
         get {
             let dateFormatter = NSDateFormatter()

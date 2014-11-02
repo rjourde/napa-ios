@@ -14,35 +14,27 @@ protocol NewEditTripViewControllerDelegate {
     func newTripViewController(controller: NewEditTripViewController, didDoneWith trip: Trip)
 }
 
-class NewEditTripViewController: UITableViewController {
+class NewEditTripViewController: UITableViewController, NewEditTripDataSourceDelegate {
 
     var trip: Trip?
+    var delegate: NewEditTripViewControllerDelegate?
+    var managedObjectContext: NSManagedObjectContext?
     
     private var tripDataSource: NewEditTripDataSource!
     
-    var managedObjectContext: NSManagedObjectContext?
-    
     private let datePickerTag = 99     // view tag identifiying the date picker view
     private var pickerCellRowHeight: CGFloat = 0.0
-    private var tap: UITapGestureRecognizer!
     
-    var delegate: NewEditTripViewControllerDelegate?
-    
-    required init(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        
-        self.initializeDataSource()
-        
-        self.tap = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
-    }
+    private var tap: UIGestureRecognizer?
     
     func initializeDataSource() {
         if let trip = self.trip {
             self.tripDataSource = NewEditTripDataSource(tripName: trip.name, startDate: trip.startDate, endDate: trip.endDate)
         } else {
-            self.tripDataSource = NewEditTripDataSource(tripName: "", startDate: NSDate.date(), endDate: NSDate.date())
+            self.tripDataSource = NewEditTripDataSource(tripName: "", startDate: NSDate(), endDate: NSDate())
         }
-    
+        
+        self.tripDataSource.delegate = self
         self.tableView.dataSource = self.tripDataSource;
     }
     
@@ -54,6 +46,8 @@ class NewEditTripViewController: UITableViewController {
             self.navigationItem.rightBarButtonItem?.enabled = false
         }
         
+        self.initializeDataSource()
+        
         // obtain the picker view cell's height, works because the cell was pre-defined in our storyboard
         var pickerViewCellToCheck = self.tableView.dequeueReusableCellWithIdentifier(datePickerID) as UITableViewCell
         self.pickerCellRowHeight = pickerViewCellToCheck.frame.size.height
@@ -61,17 +55,13 @@ class NewEditTripViewController: UITableViewController {
         // if the local changes while in the background, we need to be notified so we can update the date
         // format in the table view cells
         //
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "localeChanged", name: NSCurrentLocaleDidChangeNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "localeChanged:", name: NSCurrentLocaleDidChangeNotification, object: nil)
+        
+        self.tap = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
     }
     
     deinit {
         NSNotificationCenter.defaultCenter().removeObserver(self, name: NSCurrentLocaleDidChangeNotification, object: nil)
-    }
-
-    override func viewDidAppear(animated: Bool) {
-        if self.trip != nil {
-            self.tripDataSource.nameTextField?.becomeFirstResponder()
-        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -79,19 +69,34 @@ class NewEditTripViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func dismissKeyboard() {
-        self.view.removeGestureRecognizer(self.tap)
-        self.tripDataSource.nameTextField?.resignFirstResponder()
+    func dismissKeyboard()
+    {
+        self.view.removeGestureRecognizer(self.tap!)
+        self.tripDataSource.dismissKeyboard()
     }
     
     // MARK: - Locale
     
     /*! Responds to region format or locale changes.
     */
-    func localeChanged(notif: NSNotification) {
+    func localeChanged(sender: AnyObject) {
         // the user changed the locale (region format) in Settings, so we are notified here to
         // update the date format in the table view cells
         self.tableView.reloadData()
+    }
+    
+    // MARK: - NewEditTripDataSource delegate
+    
+    func isTripValid(valid: Bool) {
+        self.navigationItem.rightBarButtonItem?.enabled = valid
+    }
+    
+    func nameTripDidBeginEditing() {
+        self.view.addGestureRecognizer(self.tap!)
+    }
+    
+    func nameTripDidEndEditing() {
+        self.view.removeGestureRecognizer(self.tap!)
     }
     
     // MARK: - DatePicker
@@ -220,16 +225,14 @@ class NewEditTripViewController: UITableViewController {
             
             var trip: Trip
             // Create new trip
-            if let tripName = cell.textField?.text {
-                if self.trip == nil {
-                    trip = Trip.insertTripWithName(tripName, startDate: startDate, endDate: endDate, inManagedObjectContext: self.managedObjectContext!)
-                } else {
-                    // Edit trip
-                    trip = Trip(name: tripName, startDate: startDate, endDate: endDate)
-                }
-                
-                self.delegate?.newTripViewController(self, didDoneWith: trip)
+            if self.trip == nil {
+                trip = Trip.insertTripWithName(cell.textField.text, startDate: startDate, endDate: endDate, inManagedObjectContext: self.managedObjectContext!)
+            } else {
+                // Edit trip
+                trip = Trip(name: cell.textField.text, startDate: startDate, endDate: endDate)
             }
+                
+            self.delegate?.newTripViewController(self, didDoneWith: trip)
         }
     }
     
@@ -280,29 +283,5 @@ class NewEditTripViewController: UITableViewController {
                 }
             }
         }
-    }
-    
-    // MARK: - UITextField delegate
-    
-    func textFieldDidBeginEditing(textField: UITextField) {
-        self.view.addGestureRecognizer(self.tap)
-    }
-    
-    func textFieldDidEndEditing(textField: UITextField) {
-        self.view.removeGestureRecognizer(self.tap)
-    }
-    
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
-        self.tripDataSource.nameTextField?.resignFirstResponder()
-    
-        return true
-    }
-    
-    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString: String) -> Bool {
-        let text = textField.text as NSString
-        let newText = text.stringByReplacingCharactersInRange(range, withString:replacementString)
-        self.navigationItem.rightBarButtonItem?.enabled = !newText.isEmpty
-    
-        return true
     }
 }

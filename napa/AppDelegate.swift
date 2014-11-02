@@ -23,8 +23,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         application.applicationSupportsShakeToEdit = true;
         
-        //[Crashlytics startWithAPIKey:@"4085d67bba35160ce0438f0ad3b251a9eee8334d"];
-        
         return true;
     }
     

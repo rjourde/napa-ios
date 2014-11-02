@@ -22,7 +22,7 @@ class DateCell: UITableViewCell {
             self.selectedBackgroundView.hidden = true
             self.detailTextLabel?.textColor = self.tintColor
         } else {
-            if let textColor = self.textLabel?.textColor {
+            if let textColor = self.textLabel.textColor {
                 self.detailTextLabel?.textColor = textColor
             }
         }

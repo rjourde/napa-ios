@@ -18,17 +18,19 @@ class PersistentStack: NSObject {
         super.init()
         
         if let modelURL = NSBundle.mainBundle().URLForResource("napa", withExtension: "momd") {
-            persistentStoreCoordinator = NSPersistentStoreCoordinator(managedObjectModel: NSManagedObjectModel(contentsOfURL: modelURL))
-            
-            var error: NSError?
-            
-            let storeURL = self.applicationDocumentsDirectory().URLByAppendingPathComponent("napa_1.5.sqlite")
-            
-            persistentStoreCoordinator!.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: storeURL, options: nil, error: &error)
-            
-            managedObjectContext = NSManagedObjectContext(concurrencyType: NSManagedObjectContextConcurrencyType.MainQueueConcurrencyType)
-            managedObjectContext!.persistentStoreCoordinator = persistentStoreCoordinator
-            managedObjectContext!.undoManager = NSUndoManager()
+            if let managedObjectModel = NSManagedObjectModel(contentsOfURL: modelURL) {
+                persistentStoreCoordinator = NSPersistentStoreCoordinator(managedObjectModel: managedObjectModel)
+                
+                var error: NSError?
+                
+                let storeURL = self.applicationDocumentsDirectory().URLByAppendingPathComponent("napa_1.5.sqlite")
+                
+                persistentStoreCoordinator!.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: storeURL, options: nil, error: &error)
+                
+                managedObjectContext = NSManagedObjectContext(concurrencyType: NSManagedObjectContextConcurrencyType.MainQueueConcurrencyType)
+                managedObjectContext!.persistentStoreCoordinator = persistentStoreCoordinator
+                managedObjectContext!.undoManager = NSUndoManager()
+            }
         }
     }
     

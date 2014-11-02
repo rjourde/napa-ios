@@ -10,13 +10,24 @@ import UIKit
 
 class TextFieldCell: UITableViewCell {
 
-    @IBOutlet weak var label: UILabel?
-    @IBOutlet weak var textField: UITextField?
-
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    var textField = UITextField()
+    
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        self.textField.font = UIFont.systemFontOfSize(16.0)
+        self.textField.placeholder = "Name"
+        
+        contentView.addSubview(textField)
     }
-
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        textField.frame = CGRectMake(CGRectGetMinX(self.contentView.frame) + 15.0,
+            CGRectGetMinY(self.contentView.frame),
+            CGRectGetWidth(self.contentView.frame) - 15.0,
+            CGRectGetHeight(self.contentView.frame))
+    }
+    
 }
