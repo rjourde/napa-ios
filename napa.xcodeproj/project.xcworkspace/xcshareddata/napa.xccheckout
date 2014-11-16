@@ -10,29 +10,29 @@
 	<string>napa</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>AE1DF9D1-0174-437D-942D-E0C139A73A88</key>
+		<key>99FD797DF7565243CD42A13BE67AAE713AE32F31</key>
 		<string>https://github.com/rjourde/napa-ios.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>napa.xcodeproj/project.xcworkspace</string>
+	<string>napa.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>AE1DF9D1-0174-437D-942D-E0C139A73A88</key>
+		<key>99FD797DF7565243CD42A13BE67AAE713AE32F31</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/rjourde/napa-ios.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>AE1DF9D1-0174-437D-942D-E0C139A73A88</string>
+	<string>99FD797DF7565243CD42A13BE67AAE713AE32F31</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>AE1DF9D1-0174-437D-942D-E0C139A73A88</string>
+			<string>99FD797DF7565243CD42A13BE67AAE713AE32F31</string>
 			<key>IDESourceControlWCCName</key>
 			<string>napa-ios</string>
 		</dict>
